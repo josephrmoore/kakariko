@@ -1,5 +1,62 @@
 (function() {
 	window.kakariko = window.kakariko || {};
+	
+		kakariko.projects = [
+			{
+				'id' : 1,
+				'name' : 'Fatalatour',
+				'scene' : 'fatalatour',
+				'tagline' : 'Get shot in LA and have fun doing it.',
+				'text' : 'Lorem ipsum...',
+				'images' : [
+					'images/image1.jpg', 'images/image2.jpg', 'images/image3.jpg'
+				],
+				'x' : 100,
+				'y' : 100
+			}, 
+			{
+				'id' : 2,
+				'name' : 'Battle for Boobland',
+				'scene' : 'boobland',
+				'tagline' : 'Defend Boobland from the coarse hairy invaders of Manland.',
+				'text' : 'Lorem ipsum...',
+				'images' : [
+					'images/image4.jpg', 'images/image5.jpg', 'images/image6.jpg'
+				],
+				'x' : 200,
+				'y' : 200
+			}, 
+			{
+				'id' : 3,
+				'name' : 'Kill/Create',
+				'scene' : 'kill-create',
+				'tagline' : 'Whether you choose life or death, it ends in extinction.',
+				'text' : 'Lorem ipsum...',
+				'images' : [
+					'images/image7.jpg', 'images/image8.jpg', 'images/image9.jpg'
+				],
+				'x' : 300,
+				'y' : 300
+			}
+		];
+	
+	
+	kakariko.populateShops = function(){
+		for(var i=0; i<kakariko.projects.length; i++){
+			var door = Crafty.e("2D, Canvas, DOM, Collision, Color, Door");
+			door.attr({
+				x: kakariko.projects[i].x,
+				y: kakariko.projects[i].y,
+				id: kakariko.projects[i].id,
+				h: 42,
+				w: 42,
+				z: 500,
+				"_color": "red"
+			}).collision();
+			console.log(door);
+
+		}
+	};
 
 	// this drops the background into any scene that calls this function
 	kakariko.createBackground = function() {

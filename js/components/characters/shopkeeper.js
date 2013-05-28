@@ -30,10 +30,9 @@
 		},
 		
 		_checkDoorCollision: function() {
-			
-			if (this.hit('Door')) {
-				this.onHit('Door', function(ent){
-					var target = ent[0].obj;
+			if (this.hit('door')) {
+				this.onHit('door', function(ent){
+					var target = ent[0];
 					kakariko.shop = target.id;
 					Crafty.scene('building');
 				});
