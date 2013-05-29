@@ -25,8 +25,8 @@
 		    	if(this.y<=0){
 			    	this.y = 0;
 		    	}
-		   		if(this.y>=3000){
-		   			this.y = 3000;
+		   		if(this.y>=2980){
+		   			this.y = 2980;
 	    		}
 			} else {
 				if(this.x<=170){
@@ -112,7 +112,6 @@
     		if(direction.y == 0){
 	   			if ((direction.x < 0) && (!this.isPlaying('walkleft')) ) {
 		   			this.stop().animate('walkleft', 8, -1);
-					console.log(this);
 	   			}
 	   			if ((direction.x > 0) && (!this.isPlaying('walkright')) ) {
 		   			this.stop().animate('walkright', 8, -1);
@@ -155,7 +154,6 @@
 				})
 				.bind("NewDirection", function (direction) {
 					 this._newDirection(direction);
-					console.log(this.x + " " + this.y);
 				})
 				.attr({ x: 0, y: 0, z: 1000, w: 38, h: 55, dX: Crafty.math.randomInt(2, 5), dY: Crafty.math.randomInt(2, 5) })
 				.fourway(playerSpeed)
