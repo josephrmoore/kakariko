@@ -36,7 +36,7 @@
 			Crafty.scene('overworld'); 
 		});
 
-		Crafty.background('#ccc');
+		Crafty.background('#000');
 		Crafty.e('2D, DOM, Text').attr({
 			w: Crafty.stage.elem.clientWidth,
 			h: 20,
