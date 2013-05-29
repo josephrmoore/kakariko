@@ -43,7 +43,8 @@
 			x: 0,
 			y: 120
 		}).text('Loading').css({
-			'text-align': 'center'
+			'text-align': 'center',
+			'color': '#fff'
 		});
 	});
 })();
