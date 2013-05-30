@@ -7,7 +7,7 @@
 				'name' : 'Fatalatour',
 				'scene' : 'fatalatour',
 				'tagline' : 'Get shot in LA and have fun doing it.',
-				'text' : 'Lorem ipsum...',
+				'text' : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
 				'images' : [
 					'images/image1.jpg', 'images/image2.jpg', 'images/image3.jpg'
 				],
@@ -20,7 +20,7 @@
 				'name' : 'Battle for Boobland',
 				'scene' : 'boobland',
 				'tagline' : 'Defend Boobland from the coarse hairy invaders of Manland.',
-				'text' : 'Lorem ipsum...',
+				'text' : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
 				'images' : [
 					'images/image4.jpg', 'images/image5.jpg', 'images/image6.jpg'
 				],
@@ -33,7 +33,7 @@
 				'name' : 'Kill/Create',
 				'scene' : 'kill-create',
 				'tagline' : 'Whether you choose life or death, it ends in extinction.',
-				'text' : 'Lorem ipsum...',
+				'text' : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
 				'images' : [
 					'images/image7.jpg', 'images/image8.jpg', 'images/image9.jpg'
 				],

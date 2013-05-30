@@ -11,7 +11,8 @@ Crafty.scene('building', function() {
 			Crafty.audio.play("building", -1);
 		}
 	}, 1940);
-	
+
+	var text = Crafty.e("2D, Canvas, DOM, Text, Image, text");
 	var door = Crafty.e("2D, Canvas, Collision, Color, Door");
 	door.attr({
 		x: 380,
