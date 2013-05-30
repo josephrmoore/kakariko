@@ -12,7 +12,7 @@ Crafty.scene('building', function() {
 		}
 	}, 1940);
 
-	var text = Crafty.e("2D, Canvas, DOM, Text, Image, text");
+	var text = Crafty.e("2D, DOM, Image, Scrollbox");
 	var door = Crafty.e("2D, Canvas, Collision, Color, Door");
 	door.attr({
 		x: 380,
