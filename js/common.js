@@ -2,6 +2,7 @@
 	window.kakariko = window.kakariko || {};
 	
 	kakariko.shop = 0;
+	kakariko.sign = 0;
 	
 	kakariko.canText = false;
 	
@@ -56,6 +57,15 @@
 		for(var i=0; i<kakariko.projects.length; i++){
 			var door = Crafty.e("2D, Canvas, Collision, Color, Door");
 			var building = Crafty.e("2D, Canvas, Collision, Image, solid, Building");
+			var sign = Crafty.e("2D, Canvas, Collision, Image, Sign");
+			sign.attr({
+				x: kakariko.projects[i].x+15,
+				y: kakariko.projects[i].y+183,
+				w: 36,
+				h: 37,
+				z: 400,
+				"id": i
+			}).collision().image("images/sign.png");
 			building.attr({
 				x: kakariko.projects[i].x,
 				y: kakariko.projects[i].y,

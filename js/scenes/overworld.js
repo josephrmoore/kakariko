@@ -12,6 +12,33 @@ Crafty.scene('overworld', function() {
 		kakariko.shop=0;
 	}
 	kakariko.createBackground();
+	$('body').click(function(){
+		checkText();
+	});
+	
+	Crafty.e('2D, DOM, Keyboard').bind('KeyDown', function () { 
+		if (this.isDown('SPACE')) {
+			checkText();
+		}
+		if (this.isDown('ENTER')) {
+			checkText();
+		}
+	});
+	function checkText(){
+		var scrollbox = Crafty.e("2D, DOM, Image, Scrollbox");
+		scrollbox.y = -1000;
+		scrollbox._text.y = -1000;
+		if(kakariko.canText){
+			if(scrollbox.y == -1000){
+				scrollbox.y = 20;
+				scrollbox._text.y = 25;
+				scrollbox._textOn = true;
+				scrollbox._pauseUnpause();
+			} else {
+				scrollbox._paginate();
+			}
+		}
+	}
 	// Crafty.audio.stop();
 	// Crafty.audio.play("kakariko", -1);
 });

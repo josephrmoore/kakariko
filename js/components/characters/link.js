@@ -74,8 +74,25 @@
 		},
 
 		_checkObjectCollision: function(from) {
+			var target;
 			if(this.hit('solid')){
 				this.attr({x: from.x, y:from.y});
+			} else if(this.hit('Sign')){
+				this.onHit('Sign', function(ent){
+					target = ent[0].obj;
+					if(target.id !== undefined){
+						kakariko.sign = target.id;
+						console.log(kakariko.sign);
+						console.log(target);
+						console.log(Math.abs(this.x-target.x));
+						this.attr({x: from.x, y:from.y});
+					}
+				});
+			}
+			if(target !== undefined){
+				if(kakariko.sign > 0 && Math.abs(this.x-target.x) > 100 && Math.abs(this.y-target.y) > 100){
+					kakariko.sign = 0;
+				}
 			}
 		},
 
@@ -87,6 +104,11 @@
 					kakariko.canText = false;
 				}
 			} else {
+				if(kakariko.sign > 0){
+					kakariko.canText = true;
+				} else {
+					kakariko.canText = false;
+				}
 				// for(var i=0; i<kakariko.projects.length;i++){
 				// 	if(this.x>300 && this.x<500 && this.y<300 && this.y>100){
 				// 

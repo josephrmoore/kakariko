@@ -19,7 +19,9 @@
 		init: function() {
 			this.requires('text, 2D, DOM, Text');
 			if(kakariko.shop == 0){
-				// this._loadTitle(kakariko.shop);
+				if(kakariko.sign>0){
+					this._loadTitle(kakariko.sign);
+				}
 			} else {
 				this._loadText(kakariko.shop);
 			}
