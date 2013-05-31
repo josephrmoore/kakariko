@@ -4,8 +4,8 @@
 		_textPos : 0,
 		_loadText : function(id){
 			this._contents = '<span class="scroll-wrapper">' + kakariko.projects[id].text + '</span>';
-			$('.text>*').css({
-				'margin-top': this._textPos+'px'
+			$('.scroll-wrapper').css({
+				'top': this._textPos+'px'
 			});
 		},
 
@@ -16,10 +16,10 @@
 				w: 446,
 				h: 110,
 				x: 162,
-				y: 20
+				y: 25
 			}).text(this._contents);
 			this.css({
-				'padding': '10px 45px 10px 15px',
+				'padding': '5px 45px 10px 15px',
 				'max-width' : '446px',
 				'overflow' : 'hidden'
 			});

@@ -2,6 +2,8 @@
 	Crafty.c('Scrollbox', {
 		_text : {},
 		_textPos : 0,
+		_textOn : false,
+		_link : {},
 
 		_loadImage : function(){
 			this.image("images/text_black.png");
@@ -14,15 +16,30 @@
 		_paginate : function(){
 			var t = this;
 			$('body').click(function(){
-				// translate?
-				t._textPos = (t._textPos-39);
-				console.log(t._textPos);
-				$('.text>*').css({
-					'margin-top': t._textPos+'px'
-				});
-				console.log($('.scroll-wrapper').css('margin-top'));
-				console.log($('.scroll-wrapper'));
+				if(Math.abs(t._textPos) <= $('.scroll-wrapper').height()-117){
+					t._textPos = (t._textPos-117);
+					$('.scroll-wrapper').css({
+						'top': t._textPos+'px'
+					});
+				} else {
+					t._textPos = (t._textPos-117);
+					$('.scroll-wrapper').css({
+						'top': t._textPos+'px'
+					});
+					t.destroy();
+					t._textOn = false;
+					t._pauseUnpause(this._link);
+				}
 			});
+		},
+		
+		_pauseUnpause : function(link){
+			this._link = link;
+			if(this._textOn){
+				link.fourway(0);
+			} else {
+				link.fourway(3);
+			}
 		},
 		
 		init: function() {
@@ -42,6 +59,7 @@
 				'max-height': '110px',
 				'overflow': 'hidden'
 			});
+			this._textOn = true;
 			return this;
 		}
 	});
