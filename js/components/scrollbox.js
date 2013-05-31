@@ -28,17 +28,16 @@
 					});
 					t.destroy();
 					t._textOn = false;
-					t._pauseUnpause(this._link);
 				}
+				t._pauseUnpause();
 			});
 		},
 		
-		_pauseUnpause : function(link){
-			this._link = link;
+		_pauseUnpause : function(){
 			if(this._textOn){
-				link.fourway(0);
+				kakariko.link.fourway(0);
 			} else {
-				link.fourway(3);
+				kakariko.link.fourway(3);
 			}
 		},
 		
@@ -60,6 +59,7 @@
 				'overflow': 'hidden'
 			});
 			this._textOn = true;
+			this._pauseUnpause();
 			return this;
 		}
 	});

@@ -64,7 +64,7 @@
 				this.onHit('Door', function(ent){
 					var target = ent[0].obj;
 					if(target.id>0){
-						kakariko.shop = target.id;						
+						window.kakariko.shop = target.id;						
 						Crafty.scene('building');
 					} else {
 						Crafty.scene('overworld');
@@ -142,8 +142,6 @@
 		},
 		
 		link: function(){
-			createSprites();
-			this.requires('Link, 2D, DOM, Color, Collision, Fourway, SpriteAnimation, walkleft, walkright, walkup, walkdown');
 			return this.animate('walkleft', 0, 0, 7)
 				.animate('walkright', 0, 1, 7)
 				.animate('walkup', 0, 2, 7)

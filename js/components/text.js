@@ -3,7 +3,7 @@
 		_contents : "",
 		_textPos : 0,
 		_loadText : function(id){
-			this._contents = '<span class="scroll-wrapper">' + kakariko.projects[id].text + '</span>';
+			this._contents = '<span class="scroll-wrapper">' + kakariko.projects[id-1].text + '</span>';
 			$('.scroll-wrapper').css({
 				'top': this._textPos+'px'
 			});
