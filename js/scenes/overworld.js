@@ -10,7 +10,7 @@ Crafty.scene('overworld', function() {
 	}
 	kakariko.createBackground();
 	kakariko.populateShops();
-	Crafty.audio.stop();
-	Crafty.audio.play("kakariko", -1);
+	// Crafty.audio.stop();
+	// Crafty.audio.play("kakariko", -1);
 });
 

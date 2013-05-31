@@ -42,7 +42,7 @@
 			h: 20,
 			x: 0,
 			y: 120
-		}).text('Loading').css({
+		}).text('Now entering Kakariko Village...').css({
 			'text-align': 'center',
 			'color': '#fff'
 		});
