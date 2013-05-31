@@ -24,5 +24,15 @@ Crafty.scene('building', function() {
 		w: 42,
 		z: 500
 	}).collision();
+
+	Crafty.sprite(34, 53, "images/shopkeeps.png", {
+	    keep: [0, 0, 34, 53]
+	});
+	
+	var shopkeep = Crafty.e("2D, DOM, Image, SpriteAnimation, keep, solid");
+	            shopkeep.attr({ x: 383, y: 290, z: 1000, h:53, w:34 });
+	            shopkeep.animate("keep", (kakariko.shop-1)*2, 0, ((kakariko.shop-1)*2)+1);
+				shopkeep.animate('keep', 30, -1);
+				console.log(kakariko.shop);
 	
 });
