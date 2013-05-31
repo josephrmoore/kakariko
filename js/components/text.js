@@ -8,10 +8,21 @@
 				'top': this._textPos+'px'
 			});
 		},
-
+		
+		_loadTitle : function(id){
+			this._contents = '<span class="scroll-wrapper">' + kakariko.projects[id-1].name + '<br />' + kakariko.projects[id-1].tagline + '</span>';
+			$('.scroll-wrapper').css({
+				'top': this._textPos+'px'
+			});
+		},
+		
 		init: function() {
 			this.requires('text, 2D, DOM, Text');
-			this._loadText(kakariko.shop);
+			if(kakariko.shop == 0){
+				// this._loadTitle(kakariko.shop);
+			} else {
+				this._loadText(kakariko.shop);
+			}
 			this.attr({
 				w: 446,
 				h: 110,

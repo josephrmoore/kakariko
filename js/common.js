@@ -3,6 +3,8 @@
 	
 	kakariko.shop = 0;
 	
+	kakariko.canText = false;
+	
 	kakariko.projects = [
 		{
 			'id' : 1,
@@ -69,7 +71,36 @@
 				w: 42,
 				z: 500
 			}).collision();
+			
+			$('body').click(function(){
+				checkText();
+			});
 
+			Crafty.e('2D, DOM, Keyboard').bind('KeyDown', function () { 
+				if (this.isDown('SPACE')) {
+					checkText();
+				}
+				if (this.isDown('ENTER')) {
+					checkText();
+				}
+			});
+			
+			var scrollbox = Crafty.e("2D, DOM, Image, Scrollbox");
+			scrollbox.y = -1000;
+			scrollbox._text.y = -1000;
+			
+			function checkText(){
+				if(kakariko.canText){
+					if(scrollbox.y == -1000){
+						scrollbox.y = 20;
+						scrollbox._text.y = 25;
+						scrollbox._textOn = true;
+						scrollbox._pauseUnpause();
+					} else {
+						scrollbox._paginate();
+					}
+				}
+			}
 		}
 	};
 

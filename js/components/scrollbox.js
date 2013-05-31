@@ -15,22 +15,20 @@
 		
 		_paginate : function(){
 			var t = this;
-			$('body').click(function(){
-				if(Math.abs(t._textPos) <= $('.scroll-wrapper').height()-117){
-					t._textPos = (t._textPos-117);
-					$('.scroll-wrapper').css({
-						'top': t._textPos+'px'
-					});
-				} else {
-					t._textPos = (t._textPos-117);
-					$('.scroll-wrapper').css({
-						'top': t._textPos+'px'
-					});
-					t.destroy();
-					t._textOn = false;
-				}
-				t._pauseUnpause();
-			});
+			if(Math.abs(t._textPos) <= $('.scroll-wrapper').height()-117){
+				t._textPos = (t._textPos-117);
+				$('.scroll-wrapper').css({
+					'top': t._textPos+'px'
+				});
+			} else {
+				t._textPos = (t._textPos-117);
+				$('.scroll-wrapper').css({
+					'top': t._textPos+'px'
+				});
+				t.destroy();
+				t._textOn = false;
+			}
+			t._pauseUnpause();
 		},
 		
 		_pauseUnpause : function(){
@@ -45,7 +43,6 @@
 			this.requires('2D, DOM, Image, Scrollbox');
 			this._loadImage();
 			this._loadText();
-			this._paginate();
 			this.attr({
 				w: 446,
 				h: 110,
@@ -58,8 +55,6 @@
 				'max-height': '110px',
 				'overflow': 'hidden'
 			});
-			this._textOn = true;
-			this._pauseUnpause();
 			return this;
 		}
 	});

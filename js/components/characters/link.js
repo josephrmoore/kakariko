@@ -35,8 +35,8 @@
 		    	if(this.x>=590){
 			    	this.x = 590;
 		    	}
-		    	if(this.y<=300){
-			    	this.y = 300;
+		    	if(this.y<=200){
+			    	this.y = 200;
 		    	}	
 				if(this.x>370 && this.x<405){
 					if(this.y>450){
@@ -79,11 +79,28 @@
 			}
 		},
 
+		_checkText: function() {
+			if(kakariko.shop>0){
+				if(this.x>300 && this.x<500 && this.y<300){
+					kakariko.canText = true;
+				} else {
+					kakariko.canText = false;
+				}
+			} else {
+				// for(var i=0; i<kakariko.projects.length;i++){
+				// 	if(this.x>300 && this.x<500 && this.y<300 && this.y>100){
+				// 
+				// 	} 
+				// }
+			}
+		},
+
 		_enterFrame: function() {	
 			this._checkWallCollision();
 			this._checkObjectCollision();
 			this._checkDoorCollision();
 			this._checkViewport();
+			this._checkText();
 		},
 		
 		_checkViewport: function(){

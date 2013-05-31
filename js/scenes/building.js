@@ -14,7 +14,36 @@ Crafty.scene('building', function() {
 	// 	}
 	// }, 1940);
 
+
+	$('body').click(function(){
+		checkText();
+	});
+	
+	Crafty.e('2D, DOM, Keyboard').bind('KeyDown', function () { 
+		if (this.isDown('SPACE')) {
+			checkText();
+		}
+		if (this.isDown('ENTER')) {
+			checkText();
+		}
+	});	
 	var scrollbox = Crafty.e("2D, DOM, Image, Scrollbox");
+	scrollbox.y = -1000;
+	scrollbox._text.y = -1000;
+	function checkText(){
+		if(kakariko.canText){
+			if(scrollbox.y == -1000){
+				scrollbox.y = 20;
+				scrollbox._text.y = 25;
+				scrollbox._textOn = true;
+				scrollbox._pauseUnpause();
+			} else {
+				scrollbox._paginate();
+			}
+		}
+	}
+	
+
 	var door = Crafty.e("2D, Canvas, Collision, Color, Door");
 	door.attr({
 		x: 380,
@@ -30,7 +59,7 @@ Crafty.scene('building', function() {
 	});
 	
 	var shopkeep = Crafty.e("2D, DOM, Image, SpriteAnimation, keep, solid");
-	            shopkeep.attr({ x: 383, y: 290, z: 1000, h:53, w:34 });
+	            shopkeep.attr({ x: 383, y: 200, z: 1000, h:53, w:34 });
 	            shopkeep.animate("keep", (kakariko.shop-1)*2, 0, ((kakariko.shop-1)*2)+1);
 				shopkeep.animate('keep', 30, -1);
 				console.log(kakariko.shop);
