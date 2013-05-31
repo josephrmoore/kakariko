@@ -64,7 +64,7 @@
 				w: 36,
 				h: 37,
 				z: 400,
-				"id": i
+				"id": i+1
 			}).collision().image("images/sign.png");
 			building.attr({
 				x: kakariko.projects[i].x,

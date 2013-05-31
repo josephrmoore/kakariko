@@ -74,26 +74,25 @@
 		},
 
 		_checkObjectCollision: function(from) {
-			var target;
 			if(this.hit('solid')){
 				this.attr({x: from.x, y:from.y});
 			} else if(this.hit('Sign')){
+				var target;
 				this.onHit('Sign', function(ent){
 					target = ent[0].obj;
 					if(target.id !== undefined){
 						kakariko.sign = target.id;
-						console.log(kakariko.sign);
-						console.log(target);
-						console.log(Math.abs(this.x-target.x));
-						this.attr({x: from.x, y:from.y});
+						if(!kakariko.scrollbox){
+							kakariko.scrollbox = Crafty.e("2D, DOM, Image, Scrollbox");
+						}
 					}
 				});
 			}
-			if(target !== undefined){
-				if(kakariko.sign > 0 && Math.abs(this.x-target.x) > 100 && Math.abs(this.y-target.y) > 100){
-					kakariko.sign = 0;
-				}
-			}
+			// if(target !== undefined){
+			// 	if(kakariko.sign > 0 && Math.abs(this.x-target.x) > 100 && Math.abs(this.y-target.y) > 100){
+			// 		kakariko.sign = 0;
+			// 	}
+			// }
 		},
 
 		_checkText: function() {

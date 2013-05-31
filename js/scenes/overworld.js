@@ -25,18 +25,9 @@ Crafty.scene('overworld', function() {
 		}
 	});
 	function checkText(){
-		var scrollbox = Crafty.e("2D, DOM, Image, Scrollbox");
-		scrollbox.y = -1000;
-		scrollbox._text.y = -1000;
 		if(kakariko.canText){
-			if(scrollbox.y == -1000){
-				scrollbox.y = 20;
-				scrollbox._text.y = 25;
-				scrollbox._textOn = true;
-				scrollbox._pauseUnpause();
-			} else {
-				scrollbox._paginate();
-			}
+			kakariko.scrollbox._pauseUnpause();
+			kakariko.scrollbox._paginate();
 		}
 	}
 	// Crafty.audio.stop();
