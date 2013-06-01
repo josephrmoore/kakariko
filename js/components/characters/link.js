@@ -77,16 +77,16 @@
 			if(this.hit('solid')){
 				this.attr({x: from.x, y:from.y});
 			} else if(this.hit('Sign')){
-				var target;
-				this.onHit('Sign', function(ent){
-					target = ent[0].obj;
-					if(target.id !== undefined){
-						kakariko.sign = target.id;
-						if(!kakariko.scrollbox){
-							kakariko.scrollbox = Crafty.e("2D, DOM, Image, Scrollbox");
-						}
-					}
-				});
+				// var target;
+				// 				this.onHit('Sign', function(ent){
+				// 					target = ent[0].obj;
+				// 					if(target.id !== undefined){
+				// 						kakariko.sign = target.id;
+				// 						if(!kakariko.scrollbox){
+				// 							kakariko.scrollbox = Crafty.e("2D, DOM, Image, Scrollbox");
+				// 						}
+				// 					}
+				// 				});
 			}
 			// if(target !== undefined){
 			// 	if(kakariko.sign > 0 && Math.abs(this.x-target.x) > 100 && Math.abs(this.y-target.y) > 100){
