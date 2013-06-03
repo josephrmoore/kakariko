@@ -1,5 +1,6 @@
-Kakariko Village (A portfolio site for games I've made)
-=======================================================
+Kakariko Village 
+================
+(A portfolio site for games I've made)
 
 Changes for version 2:
 
