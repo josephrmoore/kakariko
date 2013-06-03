@@ -4,6 +4,7 @@
 	kakariko.shop = 0;
 	kakariko.sign = 0;
 	kakariko.signs = [];
+	kakariko.visited = [];
 	// Crafty.timer.simulateFrames(8);
 	kakariko.canText = false;
 	kakariko.checkText = function(){

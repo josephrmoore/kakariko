@@ -37,6 +37,15 @@ Crafty.scene('building', function() {
 				scrollbox._text.y = 25;
 				scrollbox._textOn = true;
 				scrollbox._pauseUnpause();
+				var visited_before = false;
+				for(var i=0; i<kakariko.visited.length; i++){
+					if(kakariko.visited[i] == kakariko.shop){
+						visited_before = true;
+					}
+				}
+				if(!visited_before){
+					kakariko.visited.push(kakariko.shop);
+				}
 			} else {
 				scrollbox._paginate();
 			}
@@ -59,9 +68,9 @@ Crafty.scene('building', function() {
 	});
 	
 	var shopkeep = Crafty.e("2D, DOM, Image, SpriteAnimation, keep, solid");
-	            shopkeep.attr({ x: 383, y: 200, z: 1000, h:53, w:34 });
-	            shopkeep.animate("keep", (kakariko.shop-1)*2, 0, ((kakariko.shop-1)*2)+1);
-				shopkeep.animate('keep', 30, -1);
-				console.log(kakariko.shop);
+	shopkeep.attr({ x: 383, y: 200, z: 1000, h:53, w:34 });
+	shopkeep.animate("keep", (kakariko.shop-1)*2, 0, ((kakariko.shop-1)*2)+1);
+	shopkeep.animate('keep', 30, -1);			
+
 	
 });

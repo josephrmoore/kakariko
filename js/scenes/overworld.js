@@ -23,6 +23,13 @@ Crafty.scene('overworld', function() {
 		if (this.isDown('ENTER')) {
 			checkText();
 		}
+		if (this.isDown('P')) {
+			if(kakariko.visited.length == kakariko.projects.length){
+				console.log("dev");
+			} else {
+				console.log("uh uh");
+			}
+		}
 	});
 	var scrollbox = Crafty.e("2D, DOM, Image, Scrollbox");
 	scrollbox.y = -1000;
