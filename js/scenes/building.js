@@ -46,9 +46,16 @@ Crafty.scene('building', function() {
 				if(!visited_before){
 					kakariko.visited.push(kakariko.shop);
 				}
+				Crafty.audio.play("text", 1);
 			} else {
 				scrollbox._paginate();
+				Crafty.audio.play("next", 1);
 			}
+		}
+		if(kakariko.visited.length == kakariko.projects.length){
+			kakariko._godMode = true;
+		} else {
+			kakariko._godMode = false;
 		}
 	}
 	

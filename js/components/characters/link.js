@@ -82,6 +82,65 @@
 					kakariko.sign = target.id;
 				});
 				kakariko.canText = true;
+			} else if(this.hit('Instruction')){
+				this.attr({x: from.x, y:from.y});
+				kakariko.instruction = true;
+				kakariko.canText = true;
+			} else if(this.hit('secret')){
+				if(kakariko._godMode){
+					if(this.hit('one')){
+						if(kakariko.secrets.length == 0){
+							// this is the first one
+							kakariko.secrets.push(true);
+							Crafty.audio.play("secret", 1);
+						} else if(kakariko.secrets.length == 1){
+							console.log("1 again");
+						} else {
+							kakariko.secrets = [];
+						}
+					} else if (this.hit('two')){
+						if(kakariko.secrets.length == 1){
+							// this is the second one
+							kakariko.secrets.push(true);
+							Crafty.audio.play("secret", 1);
+						} else if(kakariko.secrets.length == 2){
+							console.log("2 again");
+						} else {
+							kakariko.secrets = [];
+						}
+					} else if (this.hit('three')){
+						if(kakariko.secrets.length == 2){
+							// this is the third one
+							kakariko.secrets.push(true);
+							Crafty.audio.play("secret", 1);
+						} else 	if(kakariko.secrets.length == 3){
+							console.log("3 again");
+						} else {
+							kakariko.secrets = [];
+						}
+					} else if (this.hit('four')){
+						if(kakariko.secrets.length == 3){
+							// this is the fourth one
+							kakariko.secrets.push(true);
+							Crafty.audio.play("secret", 1);
+						} else if(kakariko.secrets.length == 4){
+							console.log("4 again");
+						} else{
+							kakariko.secrets = [];
+						}
+					} else if (this.hit('five')){
+						if(kakariko.secrets.length == 4){
+							// this is the fifth one
+							kakariko.secrets.push(true);
+							Crafty.audio.play("secret_win", 1);
+						} else if(kakariko.secrets.length == 5){
+							console.log("5 again");
+						} else{
+							kakariko._openDevControls();
+						}
+					}
+				}
+				this.attr({x: from.x, y:from.y});
 			}
 		},
 
@@ -130,19 +189,23 @@
 	   			if ((direction.x < 0) && (!this.isPlaying('walkleft')) ) {
 		   			this.stop().animate('walkleft', 16, -1);
 					kakariko.canText = false;
+					kakariko.instruction = false;
 	   			}
 	   			if ((direction.x > 0) && (!this.isPlaying('walkright')) ) {
 		   			this.stop().animate('walkright', 16, -1);
 					kakariko.canText = false;
+					kakariko.instruction = false;
 	   			}
     		} else {
 	   			if ((direction.y < 0) && (!this.isPlaying('walkup')) ) {
 		   			this.stop().animate('walkup', 16, -1);
 					kakariko.canText = false;
+					kakariko.instruction = false;
 	   			}
 	   			if ((direction.y > 0) && (!this.isPlaying('walkdown')) ) {
 		   			this.stop().animate('walkdown', 16, -1);
 					kakariko.canText = false;
+					kakariko.instruction = false;
 	   			}
     		}
 	        if(!direction.x && !direction.y) {
@@ -171,7 +234,8 @@
 				.bind("NewDirection", function (direction) {
 					 this._newDirection(direction);
 				})
-				.attr({ x: 1766, y: 2140, z: 1000, w: 38, h: 55, dX: Crafty.math.randomInt(2, 5), dY: Crafty.math.randomInt(2, 5) })
+				// .attr({ x: 1766, y: 2140, z: 1000, w: 38, h: 55, dX: Crafty.math.randomInt(2, 5), dY: Crafty.math.randomInt(2, 5) })
+				.attr({ x: 800, y: 700, z: 1000, w: 38, h: 55, dX: Crafty.math.randomInt(2, 5), dY: Crafty.math.randomInt(2, 5) })
 				.fourway(playerSpeed)
 			    .collision();
 		}

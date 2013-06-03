@@ -2,7 +2,11 @@
 	var audioFiles = [
 		'kakariko',
 		'building',
-		'building_intro'
+		'building_intro',
+		'text',
+		'next',
+		'secret',
+		'secret_win'
 	];
 
 	function getAudioPaths(files) {

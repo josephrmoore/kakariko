@@ -7,6 +7,15 @@
 	kakariko.visited = [];
 	// Crafty.timer.simulateFrames(8);
 	kakariko.canText = false;
+	kakariko.instruction = false;
+	
+	kakariko._godMode = false;
+	kakariko.secrets = [];
+	
+	kakariko._openDevControls = function(){
+		console.log("dev controls opened.");
+	};
+	
 	kakariko.checkText = function(){
 		var scrollbox = Crafty.e("2D, DOM, Image, Scrollbox");
 		scrollbox.y = -1000;
@@ -196,6 +205,11 @@
 		var X = 'images/stake_v.png';
 		var B = 'images/tree_green.png';
 		var Z = 'images/tree_purple.png';
+		var U = "one"; // bush
+		var I = "two"; // flower
+		var J = "three"; // peg
+		var K = "four"; // stake_h
+		var L = "five"; // stake_v
 		
 		var bg = [
 			[B,o,o,Z,o,o,B,o,o,B,o,o,B,o,o,B,o,o,B,o,o,Z,o,o,B,o,o,B,o,o,Z,o,o,B,o,o,Z,o,o,B,o,o,Z,o,o,B,o,o,B,o,o,B,o,o,B,o,o,B,o,o],
@@ -212,13 +226,13 @@
 			[o,o,o,o,o,e,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,ǝ,o,i,o,o,x,o,o,o,t,o],
 			[B,o,o,o,o,e,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,ǝ,o,o,o,o,o,o,o,o,o,o],
 			[o,o,o,t,o,e,N,N,N,N,q,u,u,u,u,u,u,u,u,u,w,N,N,q,u,u,u,u,u,u,u,w,N,N,q,u,u,u,u,u,u,u,u,u,w,N,N,N,N,ǝ,o,o,o,t,o,W,W,W,W,B],
-			[o,o,o,o,o,e,N,N,N,N,ǝ,o,o,o,o,o,o,o,k,o,e,N,N,ǝ,M,M,M,M,M,M,M,e,N,N,ǝ,o,o,x,o,o,o,o,o,i,e,N,N,N,N,ǝ,o,o,o,o,o,A,A,A,A,o],
-			[B,o,o,o,x,e,N,N,N,N,ǝ,o,o,W,o,o,o,o,o,i,e,N,N,ǝ,M,M,M,M,M,M,M,e,N,N,ǝ,k,o,o,o,o,o,t,o,o,e,N,N,N,N,ǝ,o,t,o,A,t,o,o,x,o,o],
+			[o,o,o,o,o,e,N,N,N,N,ǝ,o,o,o,o,o,o,o,k,o,e,N,N,ǝ,L,M,M,M,M,M,L,e,N,N,ǝ,o,o,x,o,o,o,o,o,i,e,N,N,N,N,ǝ,o,o,o,o,o,A,A,A,A,o],
+			[B,o,o,o,x,e,N,N,N,N,ǝ,o,o,W,o,o,o,o,o,i,e,N,N,ǝ,L,M,M,M,M,M,L,e,N,N,ǝ,k,o,o,o,o,o,t,o,o,e,N,N,N,N,ǝ,o,t,o,A,t,o,o,x,o,o],
 			[o,o,o,o,o,e,N,N,N,N,ǝ,o,o,o,o,o,o,o,o,o,e,N,N,ǝ,M,M,M,M,M,M,M,e,N,N,ǝ,o,o,t,o,o,o,x,o,o,e,N,N,N,N,ǝ,o,o,o,t,o,i,o,o,o,Z],
-			[o,o,o,i,o,e,N,N,N,N,ǝ,o,o,t,o,o,o,o,t,o,e,N,N,ǝ,M,M,M,M,M,M,M,e,N,N,ǝ,t,o,o,o,o,o,o,o,t,e,N,N,N,N,ǝ,k,o,o,o,ø,o,o,o,k,o],
+			[o,o,o,i,o,e,N,N,N,N,ǝ,o,o,t,o,o,o,o,t,o,e,N,N,ǝ,M,K,M,M,M,K,M,e,N,N,ǝ,t,o,o,o,o,o,o,o,t,e,N,N,N,N,ǝ,k,o,o,o,ø,o,o,o,k,o],
 			[Z,o,o,o,o,e,N,N,N,N,ǝ,o,o,o,o,o,o,o,o,o,e,N,N,ǝ,M,M,M,M,M,M,M,e,N,N,ǝ,o,o,x,o,o,k,o,o,o,e,N,N,N,N,ǝ,o,o,o,o,o,o,o,o,o,o],
 			[o,o,o,o,o,e,N,N,N,N,ǝ,o,o,o,t,o,o,o,i,o,e,N,N,ǝ,M,M,M,M,M,M,M,e,N,N,ǝ,t,o,o,o,o,o,o,A,x,e,N,N,N,N,ǝ,o,o,x,o,o,o,k,o,o,B],
-			[o,o,o,o,o,e,N,N,N,N,ǝ,ø,t,o,o,o,k,o,o,t,e,N,N,ǝ,M,M,M,M,M,M,M,e,N,N,ǝ,o,o,x,o,i,o,o,o,o,e,N,N,N,N,ǝ,o,W,o,o,o,o,ø,o,o,o],
+			[o,o,o,o,o,e,N,N,N,N,ǝ,ø,t,o,o,o,k,o,o,t,e,N,N,ǝ,U,M,M,J,M,M,I,e,N,N,ǝ,o,o,x,o,i,o,o,o,o,e,N,N,N,N,ǝ,o,W,o,o,o,o,ø,o,o,o],
 			[B,o,o,o,k,e,N,N,N,N,a,n,n,n,n,n,n,n,n,n,s,N,N,a,n,n,n,n,n,n,n,s,N,N,a,n,n,n,n,n,n,n,n,n,s,N,N,N,N,ǝ,o,o,t,o,o,o,x,o,o,o],
 			[o,o,o,o,o,e,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,ǝ,t,o,o,o,t,o,o,o,o,Z],
 			[o,o,o,o,t,e,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,ǝ,o,o,i,o,o,o,x,o,t,o],
@@ -260,7 +274,7 @@
 			[o,B,o,o,B,o,o,B,o,o,B,o,o,Z,o,o,B,o,o,B,o,o,B,o,o,B,o,o,B,o,o,B,o,o,B,o,o,Z,o,o,B,o,o,o,e,N,N,N,N,ǝ,B,o,o,B,o,o,B,o,B,o]
 
 		];
-
+		var alt = true;
 		for(var y = 0; y < bg.length; ++y) {
 			for(var x = 0; x < bg[y].length; ++x) {
 				if(bg[y][x] == A || bg[y][x] == W || bg[y][x] == R || bg[y][x] == Y || bg[y][x] == G || bg[y][x] == X || bg[y][x] == B || bg[y][x] == Z){
@@ -292,6 +306,55 @@
 							h: height,
 							z: 1000
 					}).image(bg[y][x]);
+				} else if (bg[y][x] == U || bg[y][x] == I || bg[y][x] == J || bg[y][x] == K || bg[y][x] == L){
+					var width, height, type, classes, v_off;
+					classes = "2D, DOM, Image, secret";
+					v_off = 0;
+					if(bg[y][x] == L){
+						width = 19;
+						height = 57;
+						type = "images/stake_v.png";
+						classes += ", five";
+						v_off = 19;
+						alt = !alt;
+					} else if(bg[y][x] == U) {
+						width = 38;
+						height = 38;
+						type = "images/bush.png"
+						classes += ", one";
+					} else if(bg[y][x] == I) {
+						width = 38;
+						height = 38;
+						type = "images/flower.png"
+						classes += ", two";
+					} else if(bg[y][x] == J) {
+						width = 38;
+						height = 38;
+						type = "images/peg.png"
+						classes += ", three";
+					} else if(bg[y][x] == K) {
+						width = 38;
+						height = 38;
+						type = "images/stake_h.png"
+						classes += ", four";
+					}
+					Crafty.e('2D, Canvas, background, paved_red')
+						.attr({
+							x: x* kakariko.TILE_SIZE,
+							y: y* kakariko.TILE_SIZE
+					});
+					
+					if(!alt){
+						v_off = 0;
+					} 
+					Crafty.e(classes)
+						.attr({
+							x: (x* kakariko.TILE_SIZE)+v_off,
+							y: y* kakariko.TILE_SIZE,
+							w: width,
+							h: height,
+							z: 1000
+					}).image(type);
 				} else {
 					Crafty.e('2D, Canvas, background, ' + bg[y][x])
 						.attr({

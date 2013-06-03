@@ -16,10 +16,17 @@
 			});
 		},
 		
+		_loadInstructions : function(){
+			this._contents = '<span class="scroll-wrapper">Welcome to Kakariko Village! Home of Joseph Moore\'s game portfolio. To get around, use the arrow keys. To read a sign, get close to it and press SPACE or ENTER (but you already figured that out didn\'t you?). To see my work, just visit each of the homes and talk to the people inside. You may even find that there is more to this place than there seems if you talk to everybody here. Good luck!</span>';
+			$('.scroll-wrapper').css({
+				'top': this._textPos+'px'
+			});
+		},
+		
 		init: function() {
 			this.requires('text, 2D, DOM, Text');
 			if(kakariko.shop == 0){
-				console.log("title init");
+				// console.log("title init");
 			} else {
 				this._loadText(kakariko.shop);
 			}
