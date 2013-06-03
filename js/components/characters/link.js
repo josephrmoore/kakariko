@@ -234,8 +234,8 @@
 				.bind("NewDirection", function (direction) {
 					 this._newDirection(direction);
 				})
-				// .attr({ x: 1766, y: 2140, z: 1000, w: 38, h: 55, dX: Crafty.math.randomInt(2, 5), dY: Crafty.math.randomInt(2, 5) })
-				.attr({ x: 800, y: 700, z: 1000, w: 38, h: 55, dX: Crafty.math.randomInt(2, 5), dY: Crafty.math.randomInt(2, 5) })
+				.attr({ x: 1766, y: 2140, z: 1000, w: 38, h: 55, dX: Crafty.math.randomInt(2, 5), dY: Crafty.math.randomInt(2, 5) })
+				// .attr({ x: 800, y: 700, z: 1000, w: 38, h: 55, dX: Crafty.math.randomInt(2, 5), dY: Crafty.math.randomInt(2, 5) })
 				.fourway(playerSpeed)
 			    .collision();
 		}
