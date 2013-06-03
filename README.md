@@ -9,7 +9,7 @@ Changes for version 2:
 - do sword slash & bush cutting animation
 - add statue in red square
 - add sound effects to text
-- better layout of things in the overworked
+- better layout of things in the overworld
 - instructional signs scattered around
 - reward for visiting all the houses and talking to all the people (access to a dev panel to change sprites, audio)
 	- code entering protocol
