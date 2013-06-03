@@ -51,6 +51,15 @@ Crafty.scene('overworld', function() {
 			}
 		}
 	}
+	Crafty.e('2D, DOM, Image')
+		.attr({
+			x: 1694,
+			y: 2200,
+			w: 183,
+			h: 92,
+			z: 10001
+	}).image("images/arch.png");
+	
 	// Crafty.audio.stop();
 	// Crafty.audio.play("kakariko", -1);
 });

@@ -19,14 +19,14 @@
 				if(this.x<=0){
 			    	this.x = 0;
 		    	}
-		    	if(this.x>=3000){
-			    	this.x = 3000;
+		    	if(this.x>=2280){
+			    	this.x = 2280;
 		    	}
 		    	if(this.y<=0){
 			    	this.y = 0;
 		    	}
-		   		if(this.y>=2980){
-		   			this.y = 2980;
+		   		if(this.y>=2280){
+		   			this.y = 2280;
 	    		}
 			} else {
 				if(this.x<=170){
@@ -82,15 +82,7 @@
 					kakariko.sign = target.id;
 				});
 				kakariko.canText = true;
-				var t = setTimeout(function(){
-					kakariko.canText = false;
-				}, 3000);
 			}
-			// if(target !== undefined){
-			// 	if(kakariko.sign > 0 && Math.abs(this.x-target.x) > 100 && Math.abs(this.y-target.y) > 100){
-			// 		kakariko.sign = 0;
-			// 	}
-			// }
 		},
 
 		_checkText: function() {
@@ -100,18 +92,7 @@
 				} else {
 					kakariko.canText = false;
 				}
-			} else {
-				// if(kakariko.sign > 0){
-				// 	kakariko.canText = true;
-				// } else {
-				// 	kakariko.canText = false;
-				// }
-				// for(var i=0; i<kakariko.projects.length;i++){
-				// 	if(this.x>300 && this.x<500 && this.y<300 && this.y>100){
-				// 
-				// 	} 
-				// }
-			}
+			} 
 		},
 
 		_enterFrame: function() {	
@@ -129,14 +110,14 @@
 				if(Crafty.viewport.x>0){
 					Crafty.viewport.x = 0;
 				}
-				if(Crafty.viewport.x<-2240){
-					Crafty.viewport.x = -2240;
+				if(Crafty.viewport.x<-1640){
+					Crafty.viewport.x = -1640;
 				}
-				if(Crafty.viewport.y>0){
-					Crafty.viewport.y = 0;
+				if(Crafty.viewport.y>-20){
+					Crafty.viewport.y = -20;
 				}
-				if(Crafty.viewport.y<-2440){
-					Crafty.viewport.y = -2440;
+				if(Crafty.viewport.y<-1800){
+					Crafty.viewport.y = -1800;
 				}
 			} else {
 				Crafty.viewport.x = -this.x+320;
@@ -182,6 +163,7 @@
 				.animate('walkright', 0, 1, 7)
 				.animate('walkup', 0, 2, 7)
 				.animate('walkdown', 0, 3, 7)
+				.animate('walkup', 8, -1).stop()
 				.bind('EnterFrame', this._enterFrame)
 				.bind('Moved', function(from){
 					this._checkObjectCollision(from);
@@ -189,7 +171,7 @@
 				.bind("NewDirection", function (direction) {
 					 this._newDirection(direction);
 				})
-				.attr({ x: 600, y: 400, z: 1000, w: 38, h: 55, dX: Crafty.math.randomInt(2, 5), dY: Crafty.math.randomInt(2, 5) })
+				.attr({ x: 1766, y: 2140, z: 1000, w: 38, h: 55, dX: Crafty.math.randomInt(2, 5), dY: Crafty.math.randomInt(2, 5) })
 				.fourway(playerSpeed)
 			    .collision();
 		}
