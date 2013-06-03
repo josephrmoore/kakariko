@@ -5,20 +5,20 @@ Crafty.scene('building', function() {
 		kakariko.link = kakariko._link();		
 	}
 	kakariko.link.attr({x:385, y:400});
-	// Crafty.audio.stop();
-	// Crafty.audio.play("building_intro", 1);
-	// t = setTimeout(function(){
-	// 	if(kakariko.shop>0){
-	// 		Crafty.audio.stop();
-	// 		Crafty.audio.play("building", -1);
-	// 	}
-	// }, 1940);
+	Crafty.audio.stop();
+	Crafty.audio.play("building_intro", 1);
+	t = setTimeout(function(){
+		if(kakariko.shop>0){
+			Crafty.audio.stop();
+			Crafty.audio.play("building", -1);
+		}
+	}, 1940);
 
 
-	$('body').click(function(){
-		checkText();
-	});
-	
+	// $('body').click(function(){
+	// 	checkText();
+	// });
+	// 
 	Crafty.e('2D, DOM, Keyboard').bind('KeyDown', function () { 
 		if (this.isDown('SPACE')) {
 			checkText();

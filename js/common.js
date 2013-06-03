@@ -48,7 +48,7 @@
 			'images' : [
 				'images/image4.jpg', 'images/image5.jpg', 'images/image6.jpg'
 			],
-			'x' : 532,
+			'x' : 475,
 			'y' : 532,
 			'skin' : "images/building_red.png"
 		}, 
@@ -74,8 +74,8 @@
 			'images' : [
 				'images/image1.jpg', 'images/image2.jpg', 'images/image3.jpg'
 			],
-			'x' : 900,
-			'y' : 1200,
+			'x' : 722,
+			'y' : 1520,
 			'skin' : "images/building.png"
 		},
 		{
@@ -88,7 +88,7 @@
 				'images/image1.jpg', 'images/image2.jpg', 'images/image3.jpg'
 			],
 			'x' : 1406,
-			'y' : 1200,
+			'y' : 1520,
 			'skin' : "images/building_red.png"
 		}
 	];

@@ -129,23 +129,20 @@
     		if(direction.y == 0){
 	   			if ((direction.x < 0) && (!this.isPlaying('walkleft')) ) {
 		   			this.stop().animate('walkleft', 8, -1);
+					kakariko.canText = false;
 	   			}
 	   			if ((direction.x > 0) && (!this.isPlaying('walkright')) ) {
 		   			this.stop().animate('walkright', 8, -1);
-	   			}
-    		} else if (direction.x == 0){
-	   			if ((direction.y < 0) && (!this.isPlaying('walkup')) ) {
-		   			this.stop().animate('walkup', 8, -1);
-	   			}
-	   			if ((direction.y > 0) && (!this.isPlaying('walkdown')) ) {
-		   			this.stop().animate('walkdown', 8, -1);
+					kakariko.canText = false;
 	   			}
     		} else {
 	   			if ((direction.y < 0) && (!this.isPlaying('walkup')) ) {
 		   			this.stop().animate('walkup', 8, -1);
+					kakariko.canText = false;
 	   			}
 	   			if ((direction.y > 0) && (!this.isPlaying('walkdown')) ) {
 		   			this.stop().animate('walkdown', 8, -1);
+					kakariko.canText = false;
 	   			}
     		}
 	        if(!direction.x && !direction.y) {

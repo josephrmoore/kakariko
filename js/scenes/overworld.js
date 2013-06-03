@@ -12,10 +12,10 @@ Crafty.scene('overworld', function() {
 		kakariko.shop=0;
 	}
 	kakariko.createBackground();
-	$('body').click(function(){
-		checkText();
-	});
-	
+	// $('body').click(function(){
+	// 	checkText();
+	// });
+	// 
 	Crafty.e('2D, DOM, Keyboard').bind('KeyDown', function () { 
 		if (this.isDown('SPACE')) {
 			checkText();
@@ -37,7 +37,6 @@ Crafty.scene('overworld', function() {
 	function checkText(){
 		if(kakariko.canText){
 			if(scrollbox.y == -1000){
-				console.log(kakariko.sign);
 				scrollbox._text._loadTitle(kakariko.sign);
 				scrollbox._text.text(scrollbox._text._contents);
 				scrollbox.y = 20-Crafty.viewport.y;
@@ -60,7 +59,7 @@ Crafty.scene('overworld', function() {
 			z: 10001
 	}).image("images/arch.png");
 	
-	// Crafty.audio.stop();
-	// Crafty.audio.play("kakariko", -1);
+	Crafty.audio.stop();
+	Crafty.audio.play("kakariko", -1);
 });
 
