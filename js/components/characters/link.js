@@ -77,16 +77,14 @@
 			if(this.hit('solid')){
 				this.attr({x: from.x, y:from.y});
 			} else if(this.hit('Sign')){
-				// var target;
-				// 				this.onHit('Sign', function(ent){
-				// 					target = ent[0].obj;
-				// 					if(target.id !== undefined){
-				// 						kakariko.sign = target.id;
-				// 						if(!kakariko.scrollbox){
-				// 							kakariko.scrollbox = Crafty.e("2D, DOM, Image, Scrollbox");
-				// 						}
-				// 					}
-				// 				});
+				this.onHit('Sign', function(ent){
+					var target = ent[0].obj;
+					kakariko.sign = target.id;
+				});
+				kakariko.canText = true;
+				var t = setTimeout(function(){
+					kakariko.canText = false;
+				}, 3000);
 			}
 			// if(target !== undefined){
 			// 	if(kakariko.sign > 0 && Math.abs(this.x-target.x) > 100 && Math.abs(this.y-target.y) > 100){
@@ -103,11 +101,11 @@
 					kakariko.canText = false;
 				}
 			} else {
-				if(kakariko.sign > 0){
-					kakariko.canText = true;
-				} else {
-					kakariko.canText = false;
-				}
+				// if(kakariko.sign > 0){
+				// 	kakariko.canText = true;
+				// } else {
+				// 	kakariko.canText = false;
+				// }
 				// for(var i=0; i<kakariko.projects.length;i++){
 				// 	if(this.x>300 && this.x<500 && this.y<300 && this.y>100){
 				// 
@@ -125,8 +123,8 @@
 		},
 		
 		_checkViewport: function(){
-			Crafty.viewport.x = -this.x+400;
-			Crafty.viewport.y = -this.y+300;
+			Crafty.viewport.x = -this.x+320;
+			Crafty.viewport.y = -this.y+240;
 			if(kakariko.shop == 0){
 				if(Crafty.viewport.x>0){
 					Crafty.viewport.x = 0;
@@ -141,8 +139,8 @@
 					Crafty.viewport.y = -2440;
 				}
 			} else {
-				Crafty.viewport.x = 0;
-				Crafty.viewport.y = 0;
+				Crafty.viewport.x = -this.x+320;
+				Crafty.viewport.y = -this.y+300;
 			}
 		},
 		

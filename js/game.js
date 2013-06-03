@@ -16,7 +16,7 @@
 
 	window.onload = function() {
 		Crafty.mobile = false;
-		Crafty.init(800, 600);
+		Crafty.init(640, 480);
 		Crafty.canvas.init();
 		Crafty.scene('loading');
 

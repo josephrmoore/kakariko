@@ -21,12 +21,13 @@
 					'top': t._textPos+'px'
 				});
 			} else {
-				t._textPos = (t._textPos-117);
-				$('.scroll-wrapper').css({
-					'top': t._textPos+'px'
-				});
-				t.destroy();
+				t._textPos = 0;
+				t._text.y = -1000;
+				t.y = -1000
 				t._textOn = false;
+				$('.scroll-wrapper').css({
+					'top': 0
+				});
 			}
 			t._pauseUnpause();
 		},

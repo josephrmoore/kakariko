@@ -24,10 +24,24 @@ Crafty.scene('overworld', function() {
 			checkText();
 		}
 	});
+	var scrollbox = Crafty.e("2D, DOM, Image, Scrollbox");
+	scrollbox.y = -1000;
+	scrollbox._text.y = -1000;
 	function checkText(){
 		if(kakariko.canText){
-			kakariko.scrollbox._pauseUnpause();
-			kakariko.scrollbox._paginate();
+			if(scrollbox.y == -1000){
+				console.log(kakariko.sign);
+				scrollbox._text._loadTitle(kakariko.sign);
+				scrollbox._text.text(scrollbox._text._contents);
+				scrollbox.y = 20-Crafty.viewport.y;
+				scrollbox._text.y = 25-Crafty.viewport.y;
+				scrollbox.x = 100-Crafty.viewport.x;
+				scrollbox._text.x = 115-Crafty.viewport.x;
+				scrollbox._textOn = true;
+				scrollbox._pauseUnpause();
+			} else {
+				scrollbox._paginate();
+			}
 		}
 	}
 	// Crafty.audio.stop();
