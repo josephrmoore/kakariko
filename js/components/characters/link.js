@@ -189,7 +189,7 @@
 				.bind("NewDirection", function (direction) {
 					 this._newDirection(direction);
 				})
-				.attr({ x: 0, y: 0, z: 1000, w: 38, h: 55, dX: Crafty.math.randomInt(2, 5), dY: Crafty.math.randomInt(2, 5) })
+				.attr({ x: 600, y: 400, z: 1000, w: 38, h: 55, dX: Crafty.math.randomInt(2, 5), dY: Crafty.math.randomInt(2, 5) })
 				.fourway(playerSpeed)
 			    .collision();
 		}
