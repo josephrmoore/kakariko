@@ -23,9 +23,10 @@
 }
 
 #wrapper {
-	background:#000;
+	color:#000;
 	padding:10px;
-	margin-bottom:20px;
+	margin: 45px 0 60px;
+	position:relative;
 }
 
 h1 {
@@ -34,17 +35,60 @@ h1 {
 	padding:0;
 }
 
-p {
+.instructions {
 	font-size:24px;
 	margin: 0;
 	padding:0;
+	background:#000;
+	color:#fff;
+	padding:0 10px;
+	width:250px;
+	position:absolute;
+	top:20px;
+	right:80px;
 }
 
 body {
-	background: url(images/tv.jpg) no-repeat center 110px;
+	background: url(images/tv.jpg) no-repeat center 237px;
 	background-size:896px 880px;
 	padding-right:4px;
 	height:960px;
+}
+
+.zelda-logo h1 {
+	font-family:"Triforce";
+	font-size:108px;
+	margin-bottom:40px;
+	text-shadow:
+	-2px -2px 0 rgba(235,164,60,1),  
+    2px -2px 0 rgba(235,164,60,1),
+    -2px 2px 0 rgba(235,164,60,1),
+     2px 2px 0 rgba(235,164,60,1);
+	color:#bc2a35;
+	position:relative;
+	z-index:100;
+}
+
+.zelda-logo h2 {
+	font-family:"CC";
+	font-size:18px;
+	text-shadow:none;
+	padding:0 10px 15px 10px;
+	position:relative;
+	z-index:100;
+}
+
+.zelda-logo {
+	position:relative;
+	margin:20px 0 0 40px;
+}
+
+.triforce {
+	position: absolute;
+	left: -5px;
+	top: -58px;
+	z-index: 1;
+	width: 250px;
 }
 
 @font-face {
@@ -59,12 +103,52 @@ body {
 
 }
 
+@font-face {
+    font-family: 'Triforce';
+    src: url('fonts/triforce-webfont.eot');
+    src: url('fonts/triforce-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/triforce-webfont.woff') format('woff'),
+         url('fonts/triforce-webfont.ttf') format('truetype'),
+         url('fonts/triforce-webfont.svg#triforcetriforce') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'CC';
+    src: url('fonts/cc.eot');
+    src: url('fonts/cc.eot?#iefix') format('embedded-opentype'),
+         url('fonts/cc.woff') format('woff'),
+         url('fonts/cc.ttf') format('truetype'),
+         url('fonts/cc.svg#triforcetriforce') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 @media screen and (-webkit-min-device-pixel-ratio:0) {
 	@font-face {
 		font-family: 'Z3';
 		src: url('fonts/retganon-webfont.svg#return_of_ganonregular') format('svg');
 	}
 }
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	@font-face {
+		font-family: 'Triforce';
+		src: url('triforce-webfont.svg#triforcetriforce') format('svg');
+	}
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	@font-face {
+		font-family: 'CC';
+		src: url('cc.svg#triforcetriforce') format('svg');
+	}
+}
+
 
 body {
 	font-family:"Z3";
@@ -85,6 +169,10 @@ body {
 	position: relative;
 }
 
+.Link {
+	cursor:pointer;
+}
+
 .off {
 	display:none;
 }
@@ -94,9 +182,12 @@ body {
   <!--[if lte IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
 <div id="wrapper">
-	<h1>Joseph Moore</h1>
-	
-	<p>Use arrow keys to move Link through Kakariko Village and SPACE or ENTER to read a sign or talk to someone.</p>
+	<img class="triforce" src="images/triforce.jpg" alt="triforce" />
+	<hgroup class="zelda-logo">
+		<h2>The Games Portfolio of</h2>
+		<h1>Joseph Moore</h1>
+	</hgroup>
+	<p class="instructions">Use arrow keys to move Link through Kakariko Village and SPACE or ENTER to read a sign or talk to someone.</p>
 </div>
 
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>

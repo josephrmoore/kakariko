@@ -128,20 +128,20 @@
 		_newDirection: function(direction){
     		if(direction.y == 0){
 	   			if ((direction.x < 0) && (!this.isPlaying('walkleft')) ) {
-		   			this.stop().animate('walkleft', 8, -1);
+		   			this.stop().animate('walkleft', 16, -1);
 					kakariko.canText = false;
 	   			}
 	   			if ((direction.x > 0) && (!this.isPlaying('walkright')) ) {
-		   			this.stop().animate('walkright', 8, -1);
+		   			this.stop().animate('walkright', 16, -1);
 					kakariko.canText = false;
 	   			}
     		} else {
 	   			if ((direction.y < 0) && (!this.isPlaying('walkup')) ) {
-		   			this.stop().animate('walkup', 8, -1);
+		   			this.stop().animate('walkup', 16, -1);
 					kakariko.canText = false;
 	   			}
 	   			if ((direction.y > 0) && (!this.isPlaying('walkdown')) ) {
-		   			this.stop().animate('walkdown', 8, -1);
+		   			this.stop().animate('walkdown', 16, -1);
 					kakariko.canText = false;
 	   			}
     		}
@@ -156,6 +156,9 @@
 		},
 		
 		link: function(){
+			$('.Link').click(function(){
+				alert("Joseph Moore - josephrmoore@gmail.com");
+			});
 			return this.animate('walkleft', 0, 0, 7)
 				.animate('walkright', 0, 1, 7)
 				.animate('walkup', 0, 2, 7)
