@@ -6,6 +6,7 @@
 		'text',
 		'next',
 		'secret',
+		'secret_possible',
 		'secret_win'
 	];
 

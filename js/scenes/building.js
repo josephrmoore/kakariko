@@ -54,7 +54,7 @@ Crafty.scene('building', function() {
 		}
 		if(kakariko.visited.length == kakariko.projects.length){
 			kakariko._godMode = true;
-			Crafty.audio.play("secret_win", 1);
+			Crafty.audio.play("secret_possible", 1);
 		} else {
 			kakariko._godMode = false;
 		}
