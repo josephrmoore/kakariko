@@ -18,8 +18,8 @@ Crafty.scene('overworld', function() {
 	// 
 	
 	var panel = Crafty.e('2D, DOM, Text, DevPanel').attr({
-		x: 20-Crafty.viewport.x,
-		y: 20-Crafty.viewport.y,
+		x: -1000,
+		y: 480-Crafty.viewport.y,
 		z: 10002
 	});
 	
@@ -34,9 +34,11 @@ Crafty.scene('overworld', function() {
 			if(kakariko._devPanel){
 				kakariko._devPanelVisible = !kakariko._devPanelVisible;
 				if(kakariko._devPanelVisible){
-					
+					panel.x = 20-Crafty.viewport.x;
+					kakariko.link.fourway(0);
 				} else {
-					
+					panel.x = -1000;
+					kakariko.link.fourway(3);
 				}
 			}
 		}
