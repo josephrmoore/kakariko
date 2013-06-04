@@ -5,6 +5,7 @@
 		'building_intro',
 		'text',
 		'next',
+		'text_close',
 		'secret',
 		'secret_possible',
 		'secret_win'

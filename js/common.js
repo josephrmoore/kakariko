@@ -13,6 +13,7 @@
 	kakariko._devPanel = true;
 	kakariko.secrets = [];
 	kakariko._devPanelVisible = true;
+	kakariko._unlocked = false;
 	
 	kakariko._openDevControls = function(){
 		console.log("dev controls opened.");
