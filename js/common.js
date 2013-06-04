@@ -14,6 +14,19 @@
 	kakariko.secrets = [];
 	kakariko._devPanelVisible = true;
 	kakariko._unlocked = false;
+	kakariko._devChangeAssets = function(){
+		$('.dev nav h2').each(function(){
+			if($(this).hasClass('music') && $(this).hasClass('selected')){
+				var audio = $('section.music li.selected').attr('id');
+				Crafty.audio.stop();
+				Crafty.audio.play(audio, -1);
+			} else if($(this).hasClass('images') && $(this).hasClass('selected')){
+				
+			} else if($(this).hasClass('layout') && $(this).hasClass('selected')){
+				
+			}
+		});
+	};
 	
 	kakariko._openDevControls = function(){
 		console.log("dev controls opened.");

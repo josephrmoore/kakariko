@@ -8,7 +8,15 @@
 		'text_close',
 		'secret',
 		'secret_possible',
-		'secret_win'
+		'secret_win',
+		'overworld',
+		'palace',
+		'dark',
+		'hyrule',
+		'gerudo',
+		'deku',
+		'clock',
+		'windfall',
 	];
 
 	function getAudioPaths(files) {

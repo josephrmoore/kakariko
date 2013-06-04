@@ -1,6 +1,6 @@
 (function() {
 	Crafty.c('DevPanel', {
-		_contents : '<div class="dev"> <header> <h1>Triforce of Power</h1> <span>Use ASWD</span> </header><nav> <h2 class="music selected">Music</h2> <h2 class="images">Images</h2> <h2 class="layout">Layout</h2></nav> <section class="music"> <ul> <li class="kakariko selected">Kakariko Village</li> <li class="overworld">8-bit Overworld</li> <li class="palace">Palace</li> <li class="dark">Dark World</li> <li class="hyrule">Hyrule Castle</li> <li class="gerudo">Gerudo Valley</li> <li class="deku">Deku Palace</li> <li class="clock">Clock Town</li> <li class="windfall">Windfall Island</li> </ul> </section> <section class="images off"> <article class="you"> <h3>You</h3> <ul> <li class="link selected">Link</li> <li class="mario">Mario</li> <li class="ganon">Ganon</li> <li class="zelda">Zelda</li> <li class="samus">Samus</li> <li class="bart">Bart Simpson</li> <li class="pacman">Pac-Man</li> <li class="sonic">Sonic</li> <li class="eight">8-bit Link</li> </ul> </article> </section> <section class="layout off"> <p>Under Construction</p> </section></div>',
+		_contents : '<div class="dev"> <header> <h1>Triforce of Power</h1> <span>Use ASWD</span> </header><nav> <h2 class="music selected">Music</h2> <h2 class="images">Images</h2> <h2 class="layout">Layout</h2></nav> <section class="music"> <ul> <li id="kakariko" class="kakariko selected">Kakariko Village</li> <li id="overworld" class="overworld">8-bit Overworld</li> <li id="palace" class="palace">Palace</li> <li id="dark" class="dark">Dark World</li> <li id="hyrule" class="hyrule">Hyrule Castle</li> <li id="gerudo" class="gerudo">Gerudo Valley</li> <li id="deku" class="deku">Deku Palace</li> <li id="clock" class="clock">Clock Town</li> <li id="windfall" class="windfall">Windfall Island</li> </ul> </section> <section class="images off"> <article class="you"> <h3>You</h3> <ul> <li id="link" class="link selected">Link</li> <li id="mario" class="mario">Mario</li> <li id="ganon" class="ganon">Ganon</li> <li id="zelda" class="zelda">Zelda</li> <li id="samus" class="samus">Samus</li> <li id="bart" class="bart">Bart Simpson</li> <li id="pacman" class="pacman">Pac-Man</li> <li id="sonic" class="sonic">Sonic</li> <li id="link-8bit" class="link-8bit">8-bit Link</li> </ul> </article> </section> <section class="layout off"> <p>Under Construction</p> </section></div>',
 		
 		_changeTab : function(right){
 			if(right){
@@ -74,10 +74,12 @@
 								if(i == lis.length-1){
 									lis.removeClass('selected');
 									$(lis[0]).addClass('selected');
+									kakariko._devChangeAssets();
 									return false;
 								} else {
 									lis.removeClass('selected');
 									$(lis[i+1]).addClass('selected');
+									kakariko._devChangeAssets();
 									return false;
 								}
 							}
@@ -93,10 +95,12 @@
 								if(i == 0){
 									lis.removeClass('selected');
 									$(lis[lis.length-1]).addClass('selected');
+									kakariko._devChangeAssets();
 									return false;
 								} else {
 									lis.removeClass('selected');
 									$(lis[i-1]).addClass('selected');
+									kakariko._devChangeAssets();
 									return false;
 								}
 							}
