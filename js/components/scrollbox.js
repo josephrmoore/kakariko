@@ -28,6 +28,12 @@
 				$('.scroll-wrapper').css({
 					'top': 0
 				});
+				if(kakariko._godMode && !kakariko._unlocked){
+					Crafty.audio.play("secret_possible", 1);
+					kakariko._unlocked = true;
+				} else {
+					Crafty.audio.play("text_close", 1);
+				}
 			}
 			t._pauseUnpause();
 		},

@@ -5,20 +5,20 @@ Crafty.scene('building', function() {
 		kakariko.link = kakariko._link();		
 	}
 	kakariko.link.attr({x:385, y:400});
-	// Crafty.audio.stop();
-	// Crafty.audio.play("building_intro", 1);
-	// t = setTimeout(function(){
-	// 	if(kakariko.shop>0){
-	// 		Crafty.audio.stop();
-	// 		Crafty.audio.play("building", -1);
-	// 	}
-	// }, 1940);
+	Crafty.audio.stop();
+	Crafty.audio.play("building_intro", 1);
+	t = setTimeout(function(){
+		if(kakariko.shop>0){
+			Crafty.audio.stop();
+			Crafty.audio.play("building", -1);
+		}
+	}, 1940);
 
 
-	$('body').click(function(){
-		checkText();
-	});
-	
+	// $('body').click(function(){
+	// 	checkText();
+	// });
+	// 
 	Crafty.e('2D, DOM, Keyboard').bind('KeyDown', function () { 
 		if (this.isDown('SPACE')) {
 			checkText();
@@ -46,9 +46,16 @@ Crafty.scene('building', function() {
 				if(!visited_before){
 					kakariko.visited.push(kakariko.shop);
 				}
+				Crafty.audio.play("text", 1);
 			} else {
 				scrollbox._paginate();
+				Crafty.audio.play("next", 1);
 			}
+		}
+		if(kakariko.visited.length == kakariko.projects.length){
+			kakariko._godMode = true;
+		} else {
+			kakariko._godMode = false;
 		}
 	}
 	

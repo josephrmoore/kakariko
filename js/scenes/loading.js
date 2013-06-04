@@ -2,7 +2,13 @@
 	var audioFiles = [
 		'kakariko',
 		'building',
-		'building_intro'
+		'building_intro',
+		'text',
+		'next',
+		'text_close',
+		'secret',
+		'secret_possible',
+		'secret_win'
 	];
 
 	function getAudioPaths(files) {
@@ -30,7 +36,7 @@
 	}
 	
 	Crafty.scene('loading', function() {
-		Crafty.load(['building.png', 'images/building_brown.png', 'images/building_red.png', 'images/background_outside.png', 'images/shop1.png', 'images/shop2.png', 'images/shop3.png', 'images/shop4.png', 'images/shop5.png', 'images/shop6.png'].concat(getAudioPaths())
+		Crafty.load(['building.png', 'images/building_brown.png', 'images/building_red.png', 'images/background_outside.png', 'images/shop1.png', 'images/shop2.png', 'images/shop3.png', 'images/shop4.png', 'images/shop5.png', 'images/shop6.png', 'images/tiles2.gif', 'images/flower.png',  'images/peg.png',  'images/bush.png',  'images/tree_green.png',  'images/tree_purple.png',  'images/sign.png',  'images/shopkeep.png',  'images/text_black.png',  'images/stake_h.png',  'images/stake_v.png',  'images/arch.png'].concat(getAudioPaths())
 		, function() {
 			installAudio();
 			Crafty.scene('overworld'); 
