@@ -133,6 +133,7 @@
 							// this is the fifth one
 							kakariko.secrets.push(true);
 							Crafty.audio.play("secret_win", 1);
+							alert("Congratulations! This will (eventually) unlock a dev console where you can play with the graphics, board, and audio. But it's not coded yet, so sowwy. You are still awesome though for figuring this out.");
 						} else if(kakariko.secrets.length == 5){
 							console.log("5 again");
 						} else{
