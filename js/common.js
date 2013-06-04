@@ -21,9 +21,9 @@
 				Crafty.audio.stop();
 				Crafty.audio.play(audio, -1);
 			} else if($(this).hasClass('images') && $(this).hasClass('selected')){
-				
+				var sprite = $('section.music li.selected').attr('id');
 			} else if($(this).hasClass('layout') && $(this).hasClass('selected')){
-				
+				console.log('layout section under construction');
 			}
 		});
 	};
