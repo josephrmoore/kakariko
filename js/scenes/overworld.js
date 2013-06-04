@@ -16,12 +16,49 @@ Crafty.scene('overworld', function() {
 	// 	checkText();
 	// });
 	// 
+	
+	var panel = Crafty.e('2D, DOM, Text, DevPanel').attr({
+		x: 20-Crafty.viewport.x,
+		y: 20-Crafty.viewport.y,
+		z: 10002
+	});
+	
 	Crafty.e('2D, DOM, Keyboard').bind('KeyDown', function () { 
 		if (this.isDown('SPACE')) {
 			checkText();
 		}
 		if (this.isDown('ENTER')) {
 			checkText();
+		}
+		if (this.isDown('3')) {
+			if(kakariko._devPanel){
+				kakariko._devPanelVisible = !kakariko._devPanelVisible;
+				if(kakariko._devPanelVisible){
+					
+				} else {
+					
+				}
+			}
+		}
+		if (this.isDown('A')) {
+			if(kakariko._devPanel && kakariko._devPanelVisible){
+				panel._changeTab(false);
+			}
+		}
+		if (this.isDown('S')) {
+			if(kakariko._devPanel && kakariko._devPanelVisible){
+				panel._changeRow(true);
+			}
+		}
+		if (this.isDown('D')) {
+			if(kakariko._devPanel && kakariko._devPanelVisible){
+				panel._changeTab(true);
+			}
+		}
+		if (this.isDown('W')) {
+			if(kakariko._devPanel && kakariko._devPanelVisible){
+				panel._changeRow(false);
+			}
 		}
 	});
 	var scrollbox = Crafty.e("2D, DOM, Image, Scrollbox");
@@ -109,7 +146,6 @@ Crafty.scene('overworld', function() {
 			h: 92,
 			z: 10001
 	});
-	
 	
 	Crafty.audio.stop();
 	Crafty.audio.play("kakariko", -1);

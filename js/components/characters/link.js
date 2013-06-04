@@ -133,6 +133,7 @@
 							// this is the fifth one
 							kakariko.secrets.push(true);
 							Crafty.audio.play("secret_win", 1);
+							kakariko._devPanel = true;
 							alert("Congratulations! This will (eventually) unlock a dev console where you can play with the graphics, board, and audio. But it's not coded yet, so sowwy. You are still awesome though for figuring this out.");
 						} else if(kakariko.secrets.length == 5){
 							console.log("5 again");
@@ -235,8 +236,8 @@
 				.bind("NewDirection", function (direction) {
 					 this._newDirection(direction);
 				})
-				.attr({ x: 1766, y: 2140, z: 1000, w: 38, h: 55, dX: Crafty.math.randomInt(2, 5), dY: Crafty.math.randomInt(2, 5) })
-				// .attr({ x: 800, y: 700, z: 1000, w: 38, h: 55, dX: Crafty.math.randomInt(2, 5), dY: Crafty.math.randomInt(2, 5) })
+				// .attr({ x: 1766, y: 2140, z: 1000, w: 38, h: 55, dX: Crafty.math.randomInt(2, 5), dY: Crafty.math.randomInt(2, 5) })
+				.attr({ x: 800, y: 700, z: 1000, w: 38, h: 55, dX: Crafty.math.randomInt(2, 5), dY: Crafty.math.randomInt(2, 5) })
 				.fourway(playerSpeed)
 			    .collision();
 		}

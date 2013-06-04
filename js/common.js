@@ -10,7 +10,9 @@
 	kakariko.instruction = false;
 	
 	kakariko._godMode = false;
+	kakariko._devPanel = true;
 	kakariko.secrets = [];
+	kakariko._devPanelVisible = true;
 	
 	kakariko._openDevControls = function(){
 		console.log("dev controls opened.");
@@ -365,6 +367,6 @@
 			}
 		}
 	};
-
+	
 })();
 
