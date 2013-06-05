@@ -158,7 +158,13 @@ Crafty.scene('overworld', function() {
 			z: 10001
 	});
 	
+	var current_music = $(".dev section.music li.selected").attr('id');
+	console.log(current_music);
+	console.log($(".dev section.music li.selected").attr('id'));
+	if(!current_music){
+		current_music = "kakariko";
+	}
 	Crafty.audio.stop();
-	Crafty.audio.play("kakariko", -1);
+	Crafty.audio.play(current_music, -1);
 });
 

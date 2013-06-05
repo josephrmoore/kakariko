@@ -16,6 +16,10 @@
 	kakariko._devPanelVisible = true;
 	kakariko._unlocked = false;
 	kakariko.panel = {};
+	kakariko.walkleft = 'walkleft';
+	kakariko.walkright = 'walkright';
+	kakariko.walkup = 'walkup';
+	kakariko.walkdown = 'walkdown';
 	kakariko._devChangeAssets = function(){
 		$('.dev nav h2').each(function(){
 			if($(this).hasClass('music') && $(this).hasClass('selected')){
@@ -23,7 +27,26 @@
 				Crafty.audio.stop();
 				Crafty.audio.play(audio, -1);
 			} else if($(this).hasClass('images') && $(this).hasClass('selected')){
-				var sprite = $('section.music li.selected').attr('id');
+				var sprite = $('section.images li.selected').attr('id');
+				console.log(sprite);
+				if(sprite == 'mario'){
+					kakariko.walkleft = 'm_walkleft';
+					kakariko.walkright = 'm_walkright';
+					kakariko.walkup = 'm_walkleft';
+					kakariko.walkdown = 'm_walkright';
+					kakariko.link.animate(kakariko.walkleft, 0, 5, 7);
+					kakariko.link.animate(kakariko.walkright, 0, 4, 7);
+				}
+				if(sprite == 'link'){
+					kakariko.walkleft = 'walkleft';
+					kakariko.walkright = 'walkright';
+					kakariko.walkup = 'walklup';
+					kakariko.walkdown = 'walkdown';
+					kakariko.link.animate(kakariko.walkleft, 0, 0, 7);
+					kakariko.link.animate(kakariko.walkright, 0, 1, 7);
+					kakariko.link.animate(kakariko.walkup, 0, 2, 7);
+					kakariko.link.animate(kakariko.walkdown, 0, 3, 7);
+				}
 			} else if($(this).hasClass('layout') && $(this).hasClass('selected')){
 				console.log('layout section under construction');
 			}
@@ -121,7 +144,7 @@
 	];
 		
 	kakariko._link = function(){
-		var link = Crafty.e('Link, 2D, DOM, Color, Collision, Fourway, SpriteAnimation, walkleft, walkright, walkup, walkdown, Persist').link();
+		var link = Crafty.e('Link, 2D, DOM, Color, Collision, Fourway, SpriteAnimation, walkleft, walkright, m_walkleft, m_walkright, walkup, walkdown, Persist').link();
 		return link;
 	};
 	
