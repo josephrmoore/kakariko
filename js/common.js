@@ -11,9 +11,9 @@
 	kakariko.x = -Crafty.viewport.x;
 	kakariko.y = -Crafty.viewport.y;
 	kakariko._godMode = false;
-	kakariko._devPanel = true;
+	kakariko._devPanel = false;
 	kakariko.secrets = [];
-	kakariko._devPanelVisible = true;
+	kakariko._devPanelVisible = false;
 	kakariko._unlocked = false;
 	kakariko.panel = {};
 	kakariko.walkleft = 'walkleft';
