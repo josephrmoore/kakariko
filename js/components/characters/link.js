@@ -245,6 +245,18 @@
 			$('.Link').click(function(){
 				alert("Joseph Moore - josephrmoore@gmail.com");
 			});
+			if(!kakariko.walkleft){
+				kakariko.walkleft = "walkleft";
+			}
+			if(!kakariko.walkright){
+				kakariko.walkright = "walkright";
+			}
+			if(!kakariko.walkup){
+				kakariko.walkup = "walkup";
+			}
+			if(!kakariko.walkdown){
+				kakariko.walkdown = "walkdown";
+			}
 			return this.animate('walkleft', 0, 0, 7)
 				.animate('walkright', 0, 1, 7)
 				.animate('walkup', 0, 2, 7)
