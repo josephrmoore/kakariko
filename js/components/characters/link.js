@@ -11,7 +11,12 @@
 				walkup: [0, 2, 38, 55],
 			    walkdown: [0, 3, 38, 55],
 			    m_walkleft: [0, 5, 38, 55],
-			    m_walkright: [0, 4, 38, 55]
+			    m_walkright: [0, 4, 38, 55],
+			    p_walkleft: [0, 7, 38, 55],
+			    p_walkright: [0, 6, 38, 55],
+			    s_walkleft: [0, 4, 38, 55],
+			    s_walkright: [0, 7, 38, 55],
+			    s_walkup: [0, 6, 38, 55]
 			});
 			Crafty.sprite(38, 55, "images/ganon.png", {
 			    g_walkleft: [0, 0, 38, 55],

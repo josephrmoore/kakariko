@@ -37,15 +37,32 @@
 					kakariko.link.animate(kakariko.walkleft, 0, 5, 7);
 					kakariko.link.animate(kakariko.walkright, 0, 4, 7);
 				}
+				if(sprite == 'pacman'){
+					kakariko.walkleft = 'p_walkleft';
+					kakariko.walkright = 'p_walkright';
+					kakariko.walkup = 'p_walkleft';
+					kakariko.walkdown = 'p_walkright';
+					kakariko.link.animate(kakariko.walkleft, 0, 7, 7);
+					kakariko.link.animate(kakariko.walkright, 0, 6, 7);
+				}
 				if(sprite == 'link'){
 					kakariko.walkleft = 'walkleft';
 					kakariko.walkright = 'walkright';
-					kakariko.walkup = 'walklup';
+					kakariko.walkup = 'walkup';
 					kakariko.walkdown = 'walkdown';
 					kakariko.link.animate(kakariko.walkleft, 0, 0, 7);
 					kakariko.link.animate(kakariko.walkright, 0, 1, 7);
 					kakariko.link.animate(kakariko.walkup, 0, 2, 7);
 					kakariko.link.animate(kakariko.walkdown, 0, 3, 7);
+				}
+				if(sprite == 'samus'){
+					kakariko.walkleft = 's_walkleft';
+					kakariko.walkright = 's_walkright';
+					kakariko.walkup = 's_walkup';
+					kakariko.walkdown = 's_walkup';
+					kakariko.link.animate(kakariko.walkleft, 0, 8, 7);
+					kakariko.link.animate(kakariko.walkright, 0, 9, 7);
+					kakariko.link.animate(kakariko.walkup, 0, 10, 7);
 				}
 			} else if($(this).hasClass('layout') && $(this).hasClass('selected')){
 				console.log('layout section under construction');
