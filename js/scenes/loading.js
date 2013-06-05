@@ -17,6 +17,13 @@
 		'deku',
 		'clock',
 		'windfall',
+		'sex',
+		'smb',
+		'got',
+		'sally',
+		'metroid',
+		'newlywed',
+		'clockwork'
 	];
 
 	function getAudioPaths(files) {
