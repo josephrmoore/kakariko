@@ -11,6 +11,54 @@
 				walkup: [0, 2, 38, 55],
 			    walkdown: [0, 3, 38, 55]
 			});
+			Crafty.sprite(38, 55, "images/mario.png", {
+			    m_walkleft: [0, 0, 38, 55],
+			    m_wakright: [0, 1, 38, 55],
+				m_walkup: [0, 2, 38, 55],
+			    m_walkdown: [0, 3, 38, 55]
+			});
+			Crafty.sprite(38, 55, "images/ganon.png", {
+			    g_walkleft: [0, 0, 38, 55],
+			    g_wakright: [0, 1, 38, 55],
+				g_walkup: [0, 2, 38, 55],
+			    g_walkdown: [0, 3, 38, 55]
+			});
+			Crafty.sprite(38, 55, "images/zelda.png", {
+			    z_walkleft: [0, 0, 38, 55],
+			    z_wakright: [0, 1, 38, 55],
+				z_walkup: [0, 2, 38, 55],
+			    z_walkdown: [0, 3, 38, 55]
+			});
+			Crafty.sprite(38, 55, "images/samus.png", {
+			    s_walkleft: [0, 0, 38, 55],
+			    s_wakright: [0, 1, 38, 55],
+				s_walkup: [0, 2, 38, 55],
+			    s_walkdown: [0, 3, 38, 55]
+			});
+			Crafty.sprite(38, 55, "images/bart.png", {
+			    b_walkleft: [0, 0, 38, 55],
+			    b_wakright: [0, 1, 38, 55],
+				b_walkup: [0, 2, 38, 55],
+			    b_walkdown: [0, 3, 38, 55]
+			});
+			Crafty.sprite(38, 55, "images/pacman.png", {
+			    p_walkleft: [0, 0, 38, 55],
+			    p_wakright: [0, 1, 38, 55],
+				p_walkup: [0, 2, 38, 55],
+			    p_walkdown: [0, 3, 38, 55]
+			});
+			Crafty.sprite(38, 55, "images/sonic.png", {
+			    h_walkleft: [0, 0, 38, 55],
+			    h_wakright: [0, 1, 38, 55],
+				h_walkup: [0, 2, 38, 55],
+			    h_walkdown: [0, 3, 38, 55]
+			});
+			Crafty.sprite(38, 55, "images/link-8bit.png", {
+			    n_walkleft: [0, 0, 38, 55],
+			    n_wakright: [0, 1, 38, 55],
+				n_walkup: [0, 2, 38, 55],
+			    n_walkdown: [0, 3, 38, 55]
+			});
 		}
 	}
 	Crafty.c('Link', {
@@ -134,6 +182,9 @@
 							kakariko.secrets.push(true);
 							Crafty.audio.play("secret_win", 1);
 							kakariko._devPanel = true;
+							kakariko._devPanelVisible = true;
+							kakariko.panel.x = kakariko.x+20;
+							kakariko.panel.y = kakariko.y+20;
 							alert("Congratulations! This will (eventually) unlock a dev console where you can play with the graphics, board, and audio. But it's not coded yet, so sowwy. You are still awesome though for figuring this out.");
 						} else if(kakariko.secrets.length == 5){
 							console.log("5 again");
@@ -161,12 +212,14 @@
 			this._checkObjectCollision();
 			this._checkDoorCollision();
 			this._checkViewport();
-			this._checkText();
+			this._checkText();			
 		},
 		
 		_checkViewport: function(){
 			Crafty.viewport.x = -this.x+320;
 			Crafty.viewport.y = -this.y+240;
+			kakariko.x = -Crafty.viewport.x;
+			kakariko.y = -Crafty.viewport.y;
 			if(kakariko.shop == 0){
 				if(Crafty.viewport.x>0){
 					Crafty.viewport.x = 0;

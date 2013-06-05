@@ -17,9 +17,9 @@ Crafty.scene('overworld', function() {
 	// });
 	// 
 	
-	var panel = Crafty.e('2D, DOM, Text, DevPanel').attr({
+	kakariko.panel = Crafty.e('2D, DOM, Text, DevPanel, Persist').attr({
 		x: -1000,
-		y: 480-Crafty.viewport.y,
+		y: -1000,
 		z: 10002
 	});
 	
@@ -34,32 +34,41 @@ Crafty.scene('overworld', function() {
 			if(kakariko._devPanel){
 				kakariko._devPanelVisible = !kakariko._devPanelVisible;
 				if(kakariko._devPanelVisible){
-					panel.x = 20-Crafty.viewport.x;
+					// console.log(kakariko.devContents);
+					kakariko.panel.x = kakariko.x+20;
+					kakariko.panel.y = kakariko.y+20;
 					kakariko.link.fourway(0);
+					console.log("before insertion: " + kakariko.devContents);
+					kakariko.panel.text('<div class="dev">'+kakariko.devContents+'</div>');
 				} else {
-					panel.x = -1000;
+					console.log("storing after close: "+$('.dev').html());
+					kakariko.devContents = $(".dev").html();
+					// console.log(kakariko.devContents);
+					kakariko.panel.x = -1000;
+					kakariko.panel.y = -1000;					
 					kakariko.link.fourway(3);
+					
 				}
 			}
 		}
 		if (this.isDown('A')) {
 			if(kakariko._devPanel && kakariko._devPanelVisible){
-				panel._changeTab(false);
+				kakariko.panel._changeTab(false);
 			}
 		}
 		if (this.isDown('S')) {
 			if(kakariko._devPanel && kakariko._devPanelVisible){
-				panel._changeRow(true);
+				kakariko.panel._changeRow(true);
 			}
 		}
 		if (this.isDown('D')) {
 			if(kakariko._devPanel && kakariko._devPanelVisible){
-				panel._changeTab(true);
+				kakariko.panel._changeTab(true);
 			}
 		}
 		if (this.isDown('W')) {
 			if(kakariko._devPanel && kakariko._devPanelVisible){
-				panel._changeRow(false);
+				kakariko.panel._changeRow(false);
 			}
 		}
 	});

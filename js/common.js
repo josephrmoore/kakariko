@@ -8,12 +8,14 @@
 	// Crafty.timer.simulateFrames(8);
 	kakariko.canText = false;
 	kakariko.instruction = false;
-	
+	kakariko.x = -Crafty.viewport.x;
+	kakariko.y = -Crafty.viewport.y;
 	kakariko._godMode = false;
 	kakariko._devPanel = true;
 	kakariko.secrets = [];
 	kakariko._devPanelVisible = true;
 	kakariko._unlocked = false;
+	kakariko.panel = {};
 	kakariko._devChangeAssets = function(){
 		$('.dev nav h2').each(function(){
 			if($(this).hasClass('music') && $(this).hasClass('selected')){

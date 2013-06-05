@@ -19,7 +19,6 @@
 						$('.dev section.layout').addClass('off');
 					} 
 				});
-				console.log('right');
 				$('.dev nav h2').each(function(i){
 					if($(this).hasClass('selected')){
 						if(i == $('.dev nav h2').length-1){
@@ -48,7 +47,6 @@
 						$('.dev section.layout').addClass('off');
 					} 
 				});
-				console.log('left');
 				$('.dev nav h2').each(function(i){
 					if($(this).hasClass('selected')){
 						if(i == 0){
@@ -111,12 +109,12 @@
 		},
 		
 		init: function() {
-			this.requires('DevPanel, 2D, DOM, Text');
+			this.requires('DevPanel, 2D, DOM, Text, Persist');
 			this.attr({
 				w: 600,
 				h: 440,
-				x: 20-Crafty.viewport.x,
-				y: 20-Crafty.viewport.y
+				x: kakariko.x+20,
+				y: kakariko.y+20
 			}).text(this._contents);
 			return this;
 		}
