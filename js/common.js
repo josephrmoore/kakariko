@@ -8,9 +8,86 @@
 	// Crafty.timer.simulateFrames(8);
 	kakariko.canText = false;
 	kakariko.instruction = false;
-	
+	kakariko.x = -Crafty.viewport.x;
+	kakariko.y = -Crafty.viewport.y;
 	kakariko._godMode = false;
+	kakariko._devPanel = false;
 	kakariko.secrets = [];
+	kakariko._devPanelVisible = false;
+	kakariko._unlocked = false;
+	kakariko.panel = {};
+	kakariko.walkleft = 'walkleft';
+	kakariko.walkright = 'walkright';
+	kakariko.walkup = 'walkup';
+	kakariko.walkdown = 'walkdown';
+	kakariko._devChangeAssets = function(){
+		$('.dev nav h2').each(function(){
+			if($(this).hasClass('music') && $(this).hasClass('selected')){
+				var audio = $('section.music li.selected').attr('id');
+				Crafty.audio.stop();
+				Crafty.audio.play(audio, -1);
+			} else if($(this).hasClass('images') && $(this).hasClass('selected')){
+				var sprite = $('section.images li.selected').attr('id');
+				console.log(sprite);
+				if(sprite == 'mario'){
+					kakariko.walkleft = 'm_walkleft';
+					kakariko.walkright = 'm_walkright';
+					kakariko.walkup = 'm_walkleft';
+					kakariko.walkdown = 'm_walkright';
+					kakariko.link.animate(kakariko.walkleft, 0, 5, 7);
+					kakariko.link.animate(kakariko.walkright, 0, 4, 7);
+				}
+				if(sprite == 'pacman'){
+					kakariko.walkleft = 'p_walkleft';
+					kakariko.walkright = 'p_walkright';
+					kakariko.walkup = 'p_walkleft';
+					kakariko.walkdown = 'p_walkright';
+					kakariko.link.animate(kakariko.walkleft, 0, 7, 7);
+					kakariko.link.animate(kakariko.walkright, 0, 6, 7);
+				}
+				if(sprite == 'link'){
+					kakariko.walkleft = 'walkleft';
+					kakariko.walkright = 'walkright';
+					kakariko.walkup = 'walkup';
+					kakariko.walkdown = 'walkdown';
+					kakariko.link.animate(kakariko.walkleft, 0, 0, 7);
+					kakariko.link.animate(kakariko.walkright, 0, 1, 7);
+					kakariko.link.animate(kakariko.walkup, 0, 2, 7);
+					kakariko.link.animate(kakariko.walkdown, 0, 3, 7);
+				}
+				if(sprite == 'samus'){
+					kakariko.walkleft = 's_walkleft';
+					kakariko.walkright = 's_walkright';
+					kakariko.walkup = 's_walkup';
+					kakariko.walkdown = 's_walkup';
+					kakariko.link.animate(kakariko.walkleft, 0, 8, 7);
+					kakariko.link.animate(kakariko.walkright, 0, 9, 7);
+					kakariko.link.animate(kakariko.walkup, 0, 10, 7);
+				}
+				if(sprite == 'bart'){
+					kakariko.walkleft = 'b_walkleft';
+					kakariko.walkright = 'b_walkright';
+					kakariko.walkup = 'b_walkup';
+					kakariko.walkdown = 'b_walkup';
+					kakariko.link.animate(kakariko.walkleft, 0, 12, 7);
+					kakariko.link.animate(kakariko.walkright, 0, 11, 7);
+					kakariko.link.animate(kakariko.walkup, 0, 13, 7);
+				}
+				if(sprite == 'sonic'){
+					kakariko.walkleft = 'h_walkleft';
+					kakariko.walkright = 'h_walkright';
+					kakariko.walkup = 'h_walkup';
+					kakariko.walkdown = 'h_walkdown';
+					kakariko.link.animate(kakariko.walkleft, 0, 14, 7);
+					kakariko.link.animate(kakariko.walkright, 0, 15, 7);
+					kakariko.link.animate(kakariko.walkup, 0, 16, 7);
+					kakariko.link.animate(kakariko.walkdown, 0, 17, 7);
+				}
+			} else if($(this).hasClass('layout') && $(this).hasClass('selected')){
+				console.log('layout section under construction');
+			}
+		});
+	};
 	
 	kakariko._openDevControls = function(){
 		console.log("dev controls opened.");
@@ -103,7 +180,7 @@
 	];
 		
 	kakariko._link = function(){
-		var link = Crafty.e('Link, 2D, DOM, Color, Collision, Fourway, SpriteAnimation, walkleft, walkright, walkup, walkdown, Persist').link();
+		var link = Crafty.e('Link, 2D, DOM, Color, Collision, Fourway, SpriteAnimation, walkleft, walkright, m_walkleft, m_walkright, walkup, walkdown, Persist').link();
 		return link;
 	};
 	
@@ -365,6 +442,6 @@
 			}
 		}
 	};
-
+	
 })();
 

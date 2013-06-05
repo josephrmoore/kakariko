@@ -5,8 +5,25 @@
 		'building_intro',
 		'text',
 		'next',
+		'text_close',
 		'secret',
-		'secret_win'
+		'secret_possible',
+		'secret_win',
+		'overworld',
+		'palace',
+		'dark',
+		'hyrule',
+		'gerudo',
+		'deku',
+		'clock',
+		'windfall',
+		'sex',
+		'smb',
+		'got',
+		'sally',
+		'metroid',
+		'newlywed',
+		'clockwork'
 	];
 
 	function getAudioPaths(files) {

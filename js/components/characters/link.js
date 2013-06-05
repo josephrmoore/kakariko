@@ -5,11 +5,25 @@
 	function createSprites() {
 		if (!spritesCreated) {
 			spritesCreated = true;
-			Crafty.sprite(38, 55, "images/link.png", {
+			Crafty.sprite(38, 55, "images/link_2.png", {
 			    walkleft: [0, 0, 38, 55],
 			    wakright: [0, 1, 38, 55],
 				walkup: [0, 2, 38, 55],
-			    walkdown: [0, 3, 38, 55]
+			    walkdown: [0, 3, 38, 55],
+			    m_walkleft: [0, 5, 38, 55],
+			    m_walkright: [0, 4, 38, 55],
+			    p_walkleft: [0, 7, 38, 55],
+			    p_walkright: [0, 6, 38, 55],
+			    s_walkleft: [0, 8, 38, 55],
+			    s_walkright: [0, 9, 38, 55],
+			    s_walkup: [0, 10, 38, 55],
+			    b_walkleft: [0, 12, 38, 55],
+			    b_walkright: [0, 11, 38, 55],
+			    b_walkup: [0, 13, 38, 55],
+			    h_walkleft: [0, 14, 38, 55],
+			    h_wakright: [0, 15, 38, 55],
+				h_walkup: [0, 16, 38, 55],
+			    h_walkdown: [0, 17, 38, 55]	
 			});
 		}
 	}
@@ -133,7 +147,13 @@
 							// this is the fifth one
 							kakariko.secrets.push(true);
 							Crafty.audio.play("secret_win", 1);
-							alert("Congratulations! This will (eventually) unlock a dev console where you can play with the graphics, board, and audio. But it's not coded yet, so sowwy. You are still awesome though for figuring this out.");
+							kakariko._devPanel = true;
+							kakariko._devPanelVisible = true;
+							kakariko.panel.x = kakariko.x+20;
+							kakariko.panel.y = kakariko.y+20;
+							this.fourway(0);
+							alert("Congratulations! You now have THE TRIFORCE OF POWER!!! To use it or turn it off, hit 3 (duh). Use ASWD to navigate the power that's now available to you.");
+							// alert("Congratulations! This will (eventually) unlock a dev console where you can play with the graphics, board, and audio. But it's not coded yet, so sowwy. You are still awesome though for figuring this out.");
 						} else if(kakariko.secrets.length == 5){
 							console.log("5 again");
 						} else{
@@ -160,12 +180,14 @@
 			this._checkObjectCollision();
 			this._checkDoorCollision();
 			this._checkViewport();
-			this._checkText();
+			this._checkText();			
 		},
 		
 		_checkViewport: function(){
 			Crafty.viewport.x = -this.x+320;
 			Crafty.viewport.y = -this.y+240;
+			kakariko.x = -Crafty.viewport.x;
+			kakariko.y = -Crafty.viewport.y;
 			if(kakariko.shop == 0){
 				if(Crafty.viewport.x>0){
 					Crafty.viewport.x = 0;
@@ -187,24 +209,24 @@
 		
 		_newDirection: function(direction){
     		if(direction.y == 0){
-	   			if ((direction.x < 0) && (!this.isPlaying('walkleft')) ) {
-		   			this.stop().animate('walkleft', 16, -1);
+	   			if ((direction.x < 0) && (!this.isPlaying(kakariko.walkleft)) ) {
+		   			this.stop().animate(kakariko.walkleft, 16, -1);
 					kakariko.canText = false;
 					kakariko.instruction = false;
 	   			}
-	   			if ((direction.x > 0) && (!this.isPlaying('walkright')) ) {
-		   			this.stop().animate('walkright', 16, -1);
+	   			if ((direction.x > 0) && (!this.isPlaying(kakariko.walkright)) ) {
+		   			this.stop().animate(kakariko.walkright, 16, -1);
 					kakariko.canText = false;
 					kakariko.instruction = false;
 	   			}
     		} else {
-	   			if ((direction.y < 0) && (!this.isPlaying('walkup')) ) {
-		   			this.stop().animate('walkup', 16, -1);
+	   			if ((direction.y < 0) && (!this.isPlaying(kakariko.walkup)) ) {
+		   			this.stop().animate(kakariko.walkup, 16, -1);
 					kakariko.canText = false;
 					kakariko.instruction = false;
 	   			}
-	   			if ((direction.y > 0) && (!this.isPlaying('walkdown')) ) {
-		   			this.stop().animate('walkdown', 16, -1);
+	   			if ((direction.y > 0) && (!this.isPlaying(kakariko.walkdown)) ) {
+		   			this.stop().animate(kakariko.walkdown, 16, -1);
 					kakariko.canText = false;
 					kakariko.instruction = false;
 	   			}
@@ -216,7 +238,7 @@
 		
 		init: function() {
 			createSprites();
-			this.requires('Link, 2D, DOM, Color, Collision, Fourway, SpriteAnimation, walkleft, walkright, walkup, walkdown');
+			this.requires('Link, 2D, DOM, Color, Collision, Fourway, SpriteAnimation, walkleft, walkright, m_walkleft, m_walkright, walkup, walkdown');
 		},
 		
 		link: function(){

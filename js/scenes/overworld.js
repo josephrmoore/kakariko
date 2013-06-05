@@ -16,12 +16,60 @@ Crafty.scene('overworld', function() {
 	// 	checkText();
 	// });
 	// 
+	
+	kakariko.panel = Crafty.e('2D, DOM, Text, DevPanel, Persist').attr({
+		x: -1000,
+		y: -1000,
+		z: 10002
+	});
+	
 	Crafty.e('2D, DOM, Keyboard').bind('KeyDown', function () { 
 		if (this.isDown('SPACE')) {
 			checkText();
 		}
 		if (this.isDown('ENTER')) {
 			checkText();
+		}
+		if (this.isDown('3')) {
+			if(kakariko._devPanel){
+				kakariko._devPanelVisible = !kakariko._devPanelVisible;
+				if(kakariko._devPanelVisible){
+					// console.log(kakariko.devContents);
+					kakariko.panel.x = kakariko.x+20;
+					kakariko.panel.y = kakariko.y+20;
+					kakariko.link.fourway(0);
+					console.log("before insertion: " + kakariko.devContents);
+					kakariko.panel.text('<div class="dev">'+kakariko.devContents+'</div>');
+				} else {
+					console.log("storing after close: "+$('.dev').html());
+					kakariko.devContents = $(".dev").html();
+					// console.log(kakariko.devContents);
+					kakariko.panel.x = -1000;
+					kakariko.panel.y = -1000;					
+					kakariko.link.fourway(3);
+					
+				}
+			}
+		}
+		if (this.isDown('A')) {
+			if(kakariko._devPanel && kakariko._devPanelVisible){
+				kakariko.panel._changeTab(false);
+			}
+		}
+		if (this.isDown('S')) {
+			if(kakariko._devPanel && kakariko._devPanelVisible){
+				kakariko.panel._changeRow(true);
+			}
+		}
+		if (this.isDown('D')) {
+			if(kakariko._devPanel && kakariko._devPanelVisible){
+				kakariko.panel._changeTab(true);
+			}
+		}
+		if (this.isDown('W')) {
+			if(kakariko._devPanel && kakariko._devPanelVisible){
+				kakariko.panel._changeRow(false);
+			}
 		}
 	});
 	var scrollbox = Crafty.e("2D, DOM, Image, Scrollbox");
@@ -110,8 +158,13 @@ Crafty.scene('overworld', function() {
 			z: 10001
 	});
 	
-	
+	var current_music = $(".dev section.music li.selected").attr('id');
+	console.log(current_music);
+	console.log($(".dev section.music li.selected").attr('id'));
+	if(!current_music){
+		current_music = "kakariko";
+	}
 	Crafty.audio.stop();
-	Crafty.audio.play("kakariko", -1);
+	Crafty.audio.play(current_music, -1);
 });
 
