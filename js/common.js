@@ -64,6 +64,25 @@
 					kakariko.link.animate(kakariko.walkright, 0, 9, 7);
 					kakariko.link.animate(kakariko.walkup, 0, 10, 7);
 				}
+				if(sprite == 'bart'){
+					kakariko.walkleft = 'b_walkleft';
+					kakariko.walkright = 'b_walkright';
+					kakariko.walkup = 'b_walkup';
+					kakariko.walkdown = 'b_walkup';
+					kakariko.link.animate(kakariko.walkleft, 0, 12, 7);
+					kakariko.link.animate(kakariko.walkright, 0, 11, 7);
+					kakariko.link.animate(kakariko.walkup, 0, 13, 7);
+				}
+				if(sprite == 'sonic'){
+					kakariko.walkleft = 'h_walkleft';
+					kakariko.walkright = 'h_walkright';
+					kakariko.walkup = 'h_walkup';
+					kakariko.walkdown = 'h_walkdown';
+					kakariko.link.animate(kakariko.walkleft, 0, 14, 7);
+					kakariko.link.animate(kakariko.walkright, 0, 15, 7);
+					kakariko.link.animate(kakariko.walkup, 0, 16, 7);
+					kakariko.link.animate(kakariko.walkdown, 0, 17, 7);
+				}
 			} else if($(this).hasClass('layout') && $(this).hasClass('selected')){
 				console.log('layout section under construction');
 			}

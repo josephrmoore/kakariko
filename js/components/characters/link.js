@@ -14,49 +14,16 @@
 			    m_walkright: [0, 4, 38, 55],
 			    p_walkleft: [0, 7, 38, 55],
 			    p_walkright: [0, 6, 38, 55],
-			    s_walkleft: [0, 4, 38, 55],
-			    s_walkright: [0, 7, 38, 55],
-			    s_walkup: [0, 6, 38, 55]
-			});
-			Crafty.sprite(38, 55, "images/ganon.png", {
-			    g_walkleft: [0, 0, 38, 55],
-			    g_wakright: [0, 1, 38, 55],
-				g_walkup: [0, 2, 38, 55],
-			    g_walkdown: [0, 3, 38, 55]
-			});
-			Crafty.sprite(38, 55, "images/zelda.png", {
-			    z_walkleft: [0, 0, 38, 55],
-			    z_wakright: [0, 1, 38, 55],
-				z_walkup: [0, 2, 38, 55],
-			    z_walkdown: [0, 3, 38, 55]
-			});
-			Crafty.sprite(38, 55, "images/samus.png", {
-			    s_walkleft: [0, 0, 38, 55],
-			    s_wakright: [0, 1, 38, 55],
-				s_walkup: [0, 2, 38, 55],
-			    s_walkdown: [0, 3, 38, 55]
-			});
-			Crafty.sprite(38, 55, "images/bart.png", {
-			    b_walkleft: [0, 0, 38, 55],
-			    b_wakright: [0, 1, 38, 55],
-				b_walkup: [0, 2, 38, 55],
-			    b_walkdown: [0, 3, 38, 55]
-			});
-			Crafty.sprite(36, 36, "images/pacman.png", {
-			    p_walkleft: [0, 1, 36, 36],
-			    p_wakright: [0, 0, 36, 36]
-			});
-			Crafty.sprite(38, 55, "images/sonic.png", {
-			    h_walkleft: [0, 0, 38, 55],
-			    h_wakright: [0, 1, 38, 55],
-				h_walkup: [0, 2, 38, 55],
-			    h_walkdown: [0, 3, 38, 55]
-			});
-			Crafty.sprite(38, 55, "images/link-8bit.png", {
-			    n_walkleft: [0, 0, 38, 55],
-			    n_wakright: [0, 1, 38, 55],
-				n_walkup: [0, 2, 38, 55],
-			    n_walkdown: [0, 3, 38, 55]
+			    s_walkleft: [0, 8, 38, 55],
+			    s_walkright: [0, 9, 38, 55],
+			    s_walkup: [0, 10, 38, 55],
+			    b_walkleft: [0, 12, 38, 55],
+			    b_walkright: [0, 11, 38, 55],
+			    b_walkup: [0, 13, 38, 55],
+			    h_walkleft: [0, 14, 38, 55],
+			    h_wakright: [0, 15, 38, 55],
+				h_walkup: [0, 16, 38, 55],
+			    h_walkdown: [0, 17, 38, 55]	
 			});
 		}
 	}
