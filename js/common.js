@@ -23,12 +23,14 @@
 	kakariko._wisdom = false;
 	kakariko._power = false;
 	kakariko._courage = false;
+	kakariko.current_music  = "kakariko";
 	kakariko._devChangeAssets = function(){
 		$('.dev nav h2').each(function(){
 			if($(this).hasClass('music') && $(this).hasClass('selected')){
-				var audio = $('section.music li.selected').attr('id');
+				var song = $('section.music li.selected').attr('id');
+				kakariko.current_music = song;
 				Crafty.audio.stop();
-				Crafty.audio.play(audio, -1);
+				Crafty.audio.play(song, -1);
 			} else if($(this).hasClass('images') && $(this).hasClass('selected')){
 				var sprite = $('section.images li.selected').attr('id');
 				if(sprite == 'mario'){

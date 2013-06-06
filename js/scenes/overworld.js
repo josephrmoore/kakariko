@@ -160,14 +160,11 @@ Crafty.scene('overworld', function() {
 			h: 92,
 			z: 10001
 	});
-	
-	var current_music = $(".dev section.music li.selected").attr('id');
-	console.log(current_music);
-	console.log($(".dev section.music li.selected").attr('id'));
-	if(!current_music){
-		current_music = "kakariko";
+	if(!window.kakariko.current_music){
+		window.kakariko.current_music = 'kakariko';
 	}
+	console.log(window.kakariko.current_music);
 	Crafty.audio.stop();
-	Crafty.audio.play(current_music, -1);
+	Crafty.audio.play(window.kakariko.current_music, -1);
 });
 
