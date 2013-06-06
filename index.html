@@ -162,6 +162,12 @@ body {
      2px 2px 0 rgba(6,0,133,.8);
 }
 
+a {
+
+	color:rgba(235,164,60,1);
+}
+
+
 .dev {
 	background:rgba(0,0,0,.6);
 	height:440px;
@@ -200,6 +206,44 @@ body {
 .selected {
 	color:yellow;
 }
+
+#map {
+	font-family : "Z3";
+	color:#000;
+	text-shadow: none;
+	margin-top:280px;
+}
+
+#map .title {
+	font-family:"Triforce";
+	text-shadow:
+	-2px -2px 0 rgba(235,164,60,1),  
+    2px -2px 0 rgba(235,164,60,1),
+    -2px 2px 0 rgba(235,164,60,1),
+     2px 2px 0 rgba(235,164,60,1);
+	color:#bc2a35;
+	font-size:64px;
+}
+
+#map .tagline {
+	font-family:"CC";
+	font-size:18px;
+}
+
+#map .text {
+	margin-bottom:40px;
+}
+
+#map a {
+	color:#fff;
+	text-shadow:
+	-2px -2px 0 rgba(6,0,133,.8),  
+    2px -2px 0 rgba(6,0,133,.8),
+    -2px 2px 0 rgba(6,0,133,.8),
+     2px 2px 0 rgba(6,0,133,.8);
+}
+
+
 </style>
   <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
        chromium.org/developers/how-tos/chrome-frame-getting-started -->
@@ -218,6 +262,7 @@ body {
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
   <script>window.jQuery || document.write('<script src="local_fallbacks/jquery.1.7.0.min.js"><\/script>')</script>
   <script type="text/javascript" src="js/crafty-min.js"></script>
+  <script type="text/javascript" src="js/konami.js"></script>
   <script type="text/javascript" src="js/components/text.js"></script>
   <script type="text/javascript" src="js/components/scrollbox.js"></script>
   <script type="text/javascript" src="js/components/instruction.js"></script>

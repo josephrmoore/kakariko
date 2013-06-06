@@ -22,8 +22,11 @@ Crafty.scene('overworld', function() {
 		y: -1000,
 		z: 10002
 	});
+	Crafty.e('2D, DOM, Keyboard').bind('KeyUp', function (e) { 
+		kakariko._konami(e);		
+	});
 	
-	Crafty.e('2D, DOM, Keyboard').bind('KeyDown', function () { 
+	Crafty.e('2D, DOM, Keyboard').bind('KeyDown', function (e) { 
 		if (this.isDown('SPACE')) {
 			checkText();
 		}

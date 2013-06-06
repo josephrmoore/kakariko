@@ -55,7 +55,9 @@ Crafty.scene('building', function() {
 		if(kakariko.visited.length == kakariko.projects.length){
 			kakariko._godMode = true;
 		} else {
-			kakariko._godMode = false;
+			if(!kakariko._wisdom){
+				kakariko._godMode = false;
+			}
 		}
 	}
 	

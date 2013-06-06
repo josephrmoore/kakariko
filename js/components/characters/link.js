@@ -101,7 +101,7 @@
 				kakariko.instruction = true;
 				kakariko.canText = true;
 			} else if(this.hit('secret')){
-				if(kakariko._godMode){
+				if(kakariko._godMode && !kakariko._power){
 					if(this.hit('one')){
 						if(kakariko.secrets.length == 0){
 							// this is the first one
@@ -152,7 +152,10 @@
 							kakariko.panel.x = kakariko.x+20;
 							kakariko.panel.y = kakariko.y+20;
 							this.fourway(0);
-							alert("Congratulations! You now have THE TRIFORCE OF POWER!!! To use it or turn it off, hit 3 (duh). Use ASWD to navigate the power that's now available to you.");
+							kakariko._power = true;
+							var t = setTimeout(function(){
+								alert("Congratulations! You now have THE TRIFORCE OF POWER!!! To use it or turn it off, hit 3 (duh). Use ASWD to navigate the power that's now available to you.");
+							}, 250);
 							// alert("Congratulations! This will (eventually) unlock a dev console where you can play with the graphics, board, and audio. But it's not coded yet, so sowwy. You are still awesome though for figuring this out.");
 						} else if(kakariko.secrets.length == 5){
 							console.log("5 again");

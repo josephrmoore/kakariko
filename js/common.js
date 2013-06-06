@@ -20,6 +20,9 @@
 	kakariko.walkright = 'walkright';
 	kakariko.walkup = 'walkup';
 	kakariko.walkdown = 'walkdown';
+	kakariko._wisdom = false;
+	kakariko._power = false;
+	kakariko._courage = false;
 	kakariko._devChangeAssets = function(){
 		$('.dev nav h2').each(function(){
 			if($(this).hasClass('music') && $(this).hasClass('selected')){
@@ -28,7 +31,6 @@
 				Crafty.audio.play(audio, -1);
 			} else if($(this).hasClass('images') && $(this).hasClass('selected')){
 				var sprite = $('section.images li.selected').attr('id');
-				console.log(sprite);
 				if(sprite == 'mario'){
 					kakariko.walkleft = 'm_walkleft';
 					kakariko.walkright = 'm_walkright';
@@ -141,7 +143,7 @@
 		{
 			'id' : 3,
 			'name' : 'Kill/Create',
-			'scene' : 'kill-create',
+			'scene' : 'killcreate',
 			'tagline' : 'Whether you choose life or death, it ends in extinction.',
 			'text' : "KILL/CREATE is a gestural interface game that pits a creator against a killer to decide who gets to destroy the world their way, either through decimation or overpopulation. The game uses a Kinect to detect both players. Once both players are found, the game begins. Each player controls a paddle bar at the top of the screen that moves left and right when they do. One paddle will breed mature polygons on the screen so that they multiply at an alarming rate. The other player can kill polygons of any age at any time. The two players have to strafe back and forth, trying to either fill the screen with polygons or eliminate them all. When the population reaches a maximum threshold or 0, the game ends with the creator and killer winning, respectively.<br /><a href=\"https://github.com/josephrmoore/cclabFinal\" target=\"_blank\">Git Repo</a><br /><a href=\"https://vimeo.com/66660683\" target=\"_blank\">Watch video</a><br /><br /><br />Before you go I want to tell you something... I haven't fixed that horizontal fence since my nephew broke it on the FOURTH of July.",
 			'images' : [
@@ -154,7 +156,7 @@
 		{
 			'id' : 4,
 			'name' : 'Mind Controller',
-			'scene' : 'mind',
+			'scene' : 'mindcontroller',
 			'tagline' : 'Make it move... with the power of your mind!',
 			'text' : "Mind Controller is an experiment in using the brain as a controller for a video game with a single boolean switch (concentrating enough/not concentrating enough). Inspired mostly by LEGO Star Wars, where you build sculptures with scattered pieces by \"using the force\", putting it together in mid-air, the game I built lets you build structures with your mind. Using an Arduino connected to the MindFlex toy brainwave reader, the game measures your concentration levels and if you are concentrating enough, you will put the pieces together, and if not they will fall (or on the easier mode, stop moving). You win when all the pieces are in place, effectively building a structure with your mind.<br /><a href=\"https://vimeo.com/66616298\" target=\"_blank\">Watch video</a><br /><br /></br />I wanna let you know... the vertical fence is good for privacy. Like pleading the FIFTH.",
 			'images' : [
